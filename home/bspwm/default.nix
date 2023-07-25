@@ -15,9 +15,17 @@
     ];
     monitors = {
       eDP-1 = [
-        "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X"
+        "I"
+        "II"
+        "III"
+        "IV"
+        "V"
+        "VI"
+        "VII"
+        "VIII"
+        "IX"
+        "X"
       ];
     };
   };
- #services.xserver.displayManager.defaultSession = "none+bspwm";
 }

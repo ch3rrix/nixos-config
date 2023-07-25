@@ -17,14 +17,10 @@
 
 
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  networking = {
-    hostName = "workplace"; # Define your hostname.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    useDHCP = lib.mkDefault true;
-  };
 
   services.printing.enable = true;
 
@@ -47,18 +43,20 @@
 
   fileSystems = {
     "/" =
-      { device = "/dev/disk/by-label/ROOT";
+      {
+        device = "/dev/disk/by-label/ROOT";
         fsType = "ext4";
       };
 
     "/boot" =
-      { device = "/dev/disk/by-label/BOOT";
+      {
+        device = "/dev/disk/by-label/BOOT";
         fsType = "vfat";
       };
   };
 
   swapDevices =
-    [ { device = "/dev/disk/by-label/SWAP"; } ];
+    [{ device = "/dev/disk/by-label/SWAP"; }];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 

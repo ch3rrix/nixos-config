@@ -8,29 +8,29 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
-  let
-  system = "x86_64-linux";
-  in
-  {
-    formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;
-    nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-	specialArgs = { inherit self inputs; };
-        modules = [
-	  ./modules/common.nix
-          ./hosts/laptop.nix
-        ];
-      };
-      workplace = nixpkgs.lib.nixosSystem {
-        inherit system;
-	specialArgs = { inherit self inputs; };
-        modules = [
-	 ./modules/common.nix
-	 ./modules/home-manager.nix
-         ./hosts/workplace.nix
-        ];
+    let
+      system = "x86_64-linux";
+    in
+    {
+      formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;
+      nixosConfigurations = {
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs; };
+          modules = [
+            ./modules/common.nix
+            ./hosts/laptop.nix
+          ];
+        };
+        workplace = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs; };
+          modules = [
+            ./modules/common.nix
+            ./modules/home-manager.nix
+            ./hosts/workplace.nix
+          ];
+        };
       };
     };
-  };
 }

@@ -1,14 +1,18 @@
 { config, pkgs, lib, ... }:
 {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  networking = {
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
+    useDHCP = lib.mkDefault true;
+  };
 
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-  #   keyMap = "us";
+    #   keyMap = "us";
     useXkbConfig = true; # use xkbOptions in tty.
   };
 

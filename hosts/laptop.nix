@@ -5,24 +5,26 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   fileSystems = {
     "/" =
-    { device = "/dev/disk/by-label/root";
-      fsType = "xfs";
-    };
+      {
+        device = "/dev/disk/by-label/root";
+        fsType = "xfs";
+      };
 
     "/boot" =
-    { device = "/dev/disk/by-label/boot";
-      fsType = "vfat";
-    };
+      {
+        device = "/dev/disk/by-label/boot";
+        fsType = "vfat";
+      };
   };
 
   swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
+    [{ device = "/dev/disk/by-label/swap"; }];
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -36,7 +38,7 @@
 
   networking = {
     hostName = "laptop"; # Define your hostname.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.enable = true; # Easiest to use and most distros use this by default.
     useDHCP = lib.mkDefault true;
   };
 

@@ -7,7 +7,7 @@
     ./firefox
   ];
 
-  
+
 
   home = {
     username = "ch3rrix";
