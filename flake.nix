@@ -7,7 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
   system = "x86_64-linux";
   in
@@ -15,30 +15,19 @@
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
+	specialArgs = { inherit self inputs; };
         modules = [
-	# ./modules/common.nix
-        # ./hosts/laptop.nix
-        # home-manager.nixosModules.home-manager
-        # {
-        #   home-manager.useGlobalPkgs = true;
-        #   home-manager.useUserPackages = true;
-        #   home-manager.users.ch3rrix = import ./home/laptop.nix;
-	# }
+	  ./modules/common.nix
+          ./hosts/laptop.nix
         ];
       };
       workplace = nixpkgs.lib.nixosSystem {
         inherit system;
+	specialArgs = { inherit self inputs; };
         modules = [
 	 ./modules/common.nix
          ./hosts/workplace.nix
-         ./modules/home-manager.nix
-
-         #home-manager.nixosModules.home-manager
-         #{
-         #  home-manager.useGlobalPkgs = true;
-         #  home-manager.useUserPackages = true;
-         #  home-manager.users.ch3rrix = import ./home/workplace.nix;
-	 #}
+	 ./modules/home-manager.nix
         ];
       };
     };

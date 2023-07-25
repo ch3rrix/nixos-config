@@ -1,13 +1,12 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 let
-  hostname = config.networking.hostName;
+  hostname = (config.networking.hostName);
   username = "ch3rrix";
-  hm = inputs.home-manager.nixosModules.home-manager;
 in
 {
   imports = [
 #   (import "${home-manager}/nixos")
-    hm 
+    inputs.home-manager.nixosModules.home-manager
    #{
    #  home-manager.useGlobalPkgs = true;
    #  home-manager.useUserPackages = true;
