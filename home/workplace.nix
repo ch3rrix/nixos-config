@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ./neovim
@@ -6,9 +7,14 @@
     ./firefox
   ];
 
+  
+
   home = {
-    username = "ch3rrix";
-    homeDirectory = "/home/ch3rrix";
-    stateVersion = "23.05";
+   #username = "ch3rrix";
+   #homeDirectory = "/home/ch3rrix";
+   #stateVersion = "23.05";
+    packages = with pkgs; [
+      telegram-desktop
+    ];
   };
 }

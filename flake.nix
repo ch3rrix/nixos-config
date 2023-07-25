@@ -16,14 +16,14 @@
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-	  ./modules/common.nix
-          ./hosts/laptop.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ch3rrix = import ./home/laptop.nix;
-	  }
+	# ./modules/common.nix
+        # ./hosts/laptop.nix
+        # home-manager.nixosModules.home-manager
+        # {
+        #   home-manager.useGlobalPkgs = true;
+        #   home-manager.useUserPackages = true;
+        #   home-manager.users.ch3rrix = import ./home/laptop.nix;
+	# }
         ];
       };
       workplace = nixpkgs.lib.nixosSystem {
@@ -31,7 +31,7 @@
         modules = [
 	 ./modules/common.nix
          ./hosts/workplace.nix
-	 ./modules/home-manager.nix
+         ./modules/home-manager.nix
 
          #home-manager.nixosModules.home-manager
          #{
