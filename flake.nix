@@ -7,10 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  let
+  system = "x86_64-linux";
+  in
+  {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
 	  ./modules/common.nix
           ./hosts/laptop.nix
@@ -23,7 +27,7 @@
         ];
       };
       workplace = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         modules = [
 	  ./modules/common.nix
           ./hosts/workplace.nix
