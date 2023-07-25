@@ -12,6 +12,7 @@
   system = "x86_64-linux";
   in
   {
+    formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -26,8 +27,8 @@
 	specialArgs = { inherit self inputs; };
         modules = [
 	 ./modules/common.nix
-         ./hosts/workplace.nix
 	 ./modules/home-manager.nix
+         ./hosts/workplace.nix
         ];
       };
     };
