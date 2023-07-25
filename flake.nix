@@ -29,14 +29,16 @@
       workplace = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-	  ./modules/common.nix
-          ./hosts/workplace.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ch3rrix = import ./home/workplace.nix;
-	  }
+	 ./modules/common.nix
+         ./hosts/workplace.nix
+	 ./modules/home-manager.nix
+
+         #home-manager.nixosModules.home-manager
+         #{
+         #  home-manager.useGlobalPkgs = true;
+         #  home-manager.useUserPackages = true;
+         #  home-manager.users.ch3rrix = import ./home/workplace.nix;
+	 #}
         ];
       };
     };
