@@ -18,7 +18,6 @@
 
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
-      ./common.nix
     ];
 
   networking = {

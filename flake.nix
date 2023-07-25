@@ -12,6 +12,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	  ./modules/common.nix
           ./hosts/laptop.nix
           home-manager.nixosModules.home-manager
           {
@@ -24,6 +25,7 @@
       workplace = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+	  ./modules/common.nix
           ./hosts/workplace.nix
           home-manager.nixosModules.home-manager
           {
