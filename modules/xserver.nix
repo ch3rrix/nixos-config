@@ -8,10 +8,10 @@
       xkbOptions = "grp:caps_toggle";
       libinput = {
         enable = true;
-	mouse = {
-	  accelSpeed = "-0.5";
-	  accelProfile = "flat";
-	};
+        mouse = {
+          accelSpeed = "-0.5";
+          accelProfile = "flat";
+        };
       };
       windowManager.bspwm.enable = true;
       displayManager = {
