@@ -1,26 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us,ru";
-      xkbOptions = "grp:caps_toggle";
-      libinput.enable = true;
-      windowManager.bspwm.enable = true;
-      displayManager = {
-        defaultSession = "none+bspwm";
-        lightdm.enable = true;
-      };
-    };
-  };
-
-
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
-
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   services.printing.enable = true;
   networking.hostName = "workplace";
@@ -61,6 +42,5 @@
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  system.stateVersion = "23.05"; # Did you read the comment?
 }
 

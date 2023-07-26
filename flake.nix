@@ -19,6 +19,7 @@
           specialArgs = { inherit self inputs; };
           modules = [
             ./modules/common.nix
+	    ./modules/xserver.nix
             ./hosts/laptop.nix
           ];
         };
@@ -27,6 +28,7 @@
           specialArgs = { inherit self inputs; };
           modules = [
             ./modules/common.nix
+	    ./modules/xserver.nix
             ./modules/home-manager.nix
             ./hosts/workplace.nix
           ];
