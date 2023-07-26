@@ -5,6 +5,7 @@
     ./bspwm
     ./alacritty
     ./firefox
+    ./git
   ];
 
 
