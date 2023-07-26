@@ -2,7 +2,7 @@
 {
   services.polybar = {
     enable = true;
-    config = {
+    settings = {
       "bar/top" = {
         monitor = "\${env:MONITOR:HDMI-1}";
 	width = "100%";
@@ -18,6 +18,10 @@
 	time = "%H:%M";
 	label = "%time% %date%";
       };
+
+      script = ''
+        polybar top &
+      '';
     };
   };
 }
