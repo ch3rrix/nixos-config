@@ -3,6 +3,7 @@
   imports = [
     ./sxhkd.nix
     ./rofi.nix
+    ./polybar.nix
   ];
   xsession.windowManager.bspwm = {
     enable = true;
