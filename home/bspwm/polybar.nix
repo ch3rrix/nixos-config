@@ -18,10 +18,9 @@
 	time = "%H:%M";
 	label = "%time% %date%";
       };
-
+    };
       script = ''
         polybar top &
       '';
-    };
   };
 }
