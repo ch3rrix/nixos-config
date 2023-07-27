@@ -3,6 +3,7 @@
   imports = [
     ./packages
     ./neovim
+    ./vscode
     ./bspwm
     ./alacritty
     ./firefox
