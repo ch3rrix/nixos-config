@@ -8,7 +8,7 @@
         accents = [ "pink" ];
         size = "compact";
         tweaks = [ "rimless" ];
-        varian = "mocha";
+        variant = "mocha";
       };
     };
   };
