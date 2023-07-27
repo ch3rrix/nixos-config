@@ -9,5 +9,17 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
     ];
+    coc = {
+      enable = true;
+      settings = {
+        languageserver = {
+          nixd = {
+            command = "nixd";
+            rootPatterns = [ ".nixd.json" ];
+            filetypes = [ "nix" ];
+          };
+        };
+      };
+    };
   };
 }
