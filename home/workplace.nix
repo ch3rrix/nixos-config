@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./packages
     ./neovim
     ./bspwm
     ./alacritty
@@ -14,8 +15,5 @@
     username = "ch3rrix";
     homeDirectory = "/home/ch3rrix";
     stateVersion = "23.05";
-    packages = with pkgs; [
-      telegram-desktop
-    ];
   };
 }
