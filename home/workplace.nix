@@ -9,6 +9,7 @@
     ./firefox
     ./git
     ./eww
+    ./theme/catppuccin
   ];
 
   xsession.windowManager.bspwm.monitors = {
