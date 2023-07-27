@@ -1,6 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, nixvim, ... }:
 {
-  programs.nixvim = {
+  programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;

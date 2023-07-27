@@ -3,8 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      nixpkgs.follows = "nixpkgs";
+    };
+    nixvim.url = "github:nix-community/nixvim";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -30,7 +34,7 @@
             ./modules/common.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix
-	    ./modules/pipewire.nix
+            ./modules/pipewire.nix
             ./hosts/workplace.nix
           ];
         };
