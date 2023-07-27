@@ -7,5 +7,7 @@
     hunspell
     hunspellDicts.ru_RU
     libreoffice-qt
+    bat
+    jq
   ];
 }

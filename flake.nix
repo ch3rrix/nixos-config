@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, catppuccin, ... }:
     let
       system = "x86_64-linux";
     in
@@ -33,6 +34,7 @@
             ./modules/xserver.nix
             ./modules/home-manager.nix
             ./modules/pipewire.nix
+            ./modules/catppuccin.nix
             ./hosts/workplace.nix
           ];
         };
