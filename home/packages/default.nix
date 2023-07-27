@@ -10,5 +10,6 @@
     bat
     jq
     dconf
+    nixpkgs-fmt
   ];
 }
