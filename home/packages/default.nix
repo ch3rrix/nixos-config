@@ -4,5 +4,8 @@
     telegram-desktop
     pavucontrol
     libnotify
+    hunspell
+    hunspellDicts.ru_RU
+    libreoffice-qt
   ];
 }
