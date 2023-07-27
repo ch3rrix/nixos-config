@@ -5,7 +5,7 @@
     ./rofi.nix
     ./polybar.nix
     ./screen-lock.nix
-    ./dust.nix
+    ./dunst.nix
   ];
   xsession.windowManager.bspwm = {
     enable = true;
