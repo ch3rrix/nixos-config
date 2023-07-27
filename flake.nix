@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
-      nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
@@ -36,6 +36,7 @@
             ./modules/home-manager.nix
             ./modules/pipewire.nix
             ./hosts/workplace.nix
+            inputs.nixvim.homeManagerModules.nixvim
           ];
         };
       };

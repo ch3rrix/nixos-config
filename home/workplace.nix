@@ -8,6 +8,7 @@
     ./alacritty
     ./firefox
     ./git
+    ./eww
   ];
 
   xsession.windowManager.bspwm.monitors = {
