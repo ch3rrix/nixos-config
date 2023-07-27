@@ -30,6 +30,7 @@
             ./modules/common.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix
+	    ./modules/pipewire.nix
             ./hosts/workplace.nix
           ];
         };
