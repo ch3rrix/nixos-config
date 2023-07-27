@@ -16,7 +16,7 @@
       windowManager.bspwm.enable = true;
       displayManager = {
         defaultSession = "none+bspwm";
-        lightdm.enable = true;
+        sddm.enable = true;
       };
     };
   };
