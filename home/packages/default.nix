@@ -9,5 +9,6 @@
     libreoffice-qt
     bat
     jq
+    dconf
   ];
 }
