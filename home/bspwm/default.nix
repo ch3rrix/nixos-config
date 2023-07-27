@@ -11,6 +11,7 @@
       border_width = 2;
       gapless_monocle = true;
       split_ratio = 0.52;
+      padding = 0;
     };
     startupPrograms = [
     ];
