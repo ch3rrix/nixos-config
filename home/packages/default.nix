@@ -13,5 +13,6 @@
     nixpkgs-fmt
     flameshot
     xclip
+    cloc
   ];
 }
