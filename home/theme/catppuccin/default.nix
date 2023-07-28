@@ -12,4 +12,10 @@
       };
     };
   };
+
+  home.pointerCursor = {
+    size = 32;
+    package = pkgs.catppuccin-cursors.mochaPink;
+    name = "Catppuccin-Mocha-Pink-Cursors";
+  };
 }
