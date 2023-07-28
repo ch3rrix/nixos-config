@@ -1,4 +1,5 @@
-{ config, pks, lib, hostName, ... }:
+{ config, pks, lib, osConfig, ... }:
+let hostname = osConfig.networking.hostName; in
 {
   xsession.windowManager.bspwm = {
     enable = true;
@@ -12,7 +13,7 @@
       "xsetroot -cursor_name left_ptr"
     ];
     monitors =
-      if "${hostName}" == "laptop" then
+      if "${hostname}" == "laptop" then
         {
           eDP-1 = [
             "I"
@@ -27,7 +28,7 @@
             "X"
           ];
         }
-      else if "${hostName}" == "workplace" then
+      else if "${hostname}" == "workplace" then
         {
           HDMI-1 = [
             "I"

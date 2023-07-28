@@ -11,9 +11,6 @@ in
         useGlobalPkgs = true;
         useUserPackages = true;
         users.${username} = import (../home/${hostname}.nix);
-        extraSpecialArgs = {
-          hostName = hostname;
-        };
       };
     }
   ];
