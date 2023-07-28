@@ -2,10 +2,6 @@
 {
   imports = [
     ./sxhkd.nix
-    ./rofi.nix
-    ./polybar.nix
-    ./screen-lock.nix
-    ./dunst.nix
   ];
   xsession.windowManager.bspwm = {
     enable = true;
@@ -33,4 +29,5 @@
       ];
     };
   };
+  import = ./workplace.nix;
 }

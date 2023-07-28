@@ -33,6 +33,7 @@
             ./modules/xserver.nix
             ./modules/home-manager.nix
             ./modules/pipewire.nix
+            ./modules/fish.nix
             ./hosts/workplace.nix
           ];
         };

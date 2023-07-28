@@ -4,28 +4,14 @@
     ./packages
     ./neovim
     ./vscode
-    ./bspwm
+    ./wm
     ./alacritty
     ./firefox
     ./git
     ./eww
     ./theme/catppuccin
+    ./java
   ];
-
-  xsession.windowManager.bspwm.monitors = {
-    HDMI-1 = [
-      "I"
-      "II"
-      "III"
-    ];
-    DP-1 = [
-      "IV"
-      "V"
-      "VI"
-      "VII"
-    ];
-  };
-
 
   home = {
     username = "ch3rrix";
