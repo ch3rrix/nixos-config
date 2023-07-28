@@ -1,5 +1,5 @@
 { config, pks, lib, ... }:
-let hostname = config.networking.hostName; in
+let hostname = (config.networking.hostName); in
 {
   xsession.windowManager.bspwm = {
     enable = true;
