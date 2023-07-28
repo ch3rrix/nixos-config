@@ -12,5 +12,6 @@
     dconf
     nixpkgs-fmt
     flameshot
+    xclip
   ];
 }
