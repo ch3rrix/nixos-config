@@ -7,9 +7,14 @@ in
   imports = [
     inputs.home-manager.nixosModules.home-manager
     {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.${username} = import  ../home/${hostname}.nix;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.${username} = import (../home/${hostname}.nix);
+        extraSpecialArgs = {
+          hostName = hostname;
+        };
+      };
     }
   ];
 }
