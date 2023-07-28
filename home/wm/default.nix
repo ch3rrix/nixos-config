@@ -6,7 +6,7 @@
     ./dunst.nix
     ./rofi.nix
     ./polybar.nix
-    ./screen-lock.nix
+#   ./screen-lock.nix
     ./xss-lock.nix
   ];
 }
