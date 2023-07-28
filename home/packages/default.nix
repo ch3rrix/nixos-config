@@ -11,5 +11,6 @@
     jq
     dconf
     nixpkgs-fmt
+    flameshot
   ];
 }
