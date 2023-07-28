@@ -34,6 +34,7 @@
             ./modules/home-manager.nix
             ./modules/pipewire.nix
             ./modules/fish.nix
+            ./modules/xdg.nix
             ./hosts/workplace.nix
           ];
         };
