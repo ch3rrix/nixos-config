@@ -17,7 +17,9 @@
   };
 
   home.pointerCursor = {
-    size = 42;
+    gtk.enable = true;
+    x11.enable = true;
+    size = 26;
     package = pkgs.catppuccin-cursors.mochaPink;
     name = "Catppuccin-Mocha-Pink-Cursors";
   };
