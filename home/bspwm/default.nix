@@ -16,6 +16,7 @@
       window_gap = 0;
     };
     startupPrograms = [
+      "xsetroot -cursor_name left_ptr"
     ];
     monitors = {
       eDP-1 = [
