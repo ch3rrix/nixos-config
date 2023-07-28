@@ -7,5 +7,6 @@
     ./rofi.nix
     ./polybar.nix
     ./screen-lock.nix
+    ./xss-lock.nix
   ];
 }

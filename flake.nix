@@ -35,6 +35,7 @@
             ./modules/pipewire.nix
             ./modules/fish.nix
             ./modules/xdg.nix
+            ./modules/physlock.nix
             ./hosts/workplace.nix
           ];
         };
