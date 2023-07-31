@@ -8,6 +8,13 @@ let hostname = osConfig.networking.hostName; in
       gapless_monocle = true;
       split_ratio = 0.52;
       window_gap = 0;
+
+      normal_border_color = "#7ccdfd";
+      active_border_color = "#7ccdfd";
+      focused_border_color = "#f5748c";
+      presel-feedback_colour = "#fc9d63";
+
+
     };
     startupPrograms = [
       "xsetroot -cursor_name left_ptr"
