@@ -8,9 +8,10 @@ let hostname = osConfig.networking.hostName; in
       gapless_monocle = true;
       split_ratio = 0.52;
       window_gap = 0;
+      focus_follows_pointer = true;
 
       normal_border_color = "#1e1e2e";
-      active_border_color = "#b4befe";
+      active_border_color = "#313244";
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
