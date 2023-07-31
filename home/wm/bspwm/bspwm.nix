@@ -9,6 +9,7 @@ let hostname = osConfig.networking.hostName; in
       split_ratio = 0.52;
       window_gap = 4;
       focus_follows_pointer = true;
+      single_monocle = true;
 
       normal_border_color = "#313244";
       active_border_color = "#45475a";
