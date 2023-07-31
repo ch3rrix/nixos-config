@@ -2,6 +2,14 @@
 {
   programs.vscode = {
     enable = true;
+    extensions = with pkgs.vscode-extensions;[
+      ms-vscode.cpptools
+      ms-vscode.makefile-tools
+      ms-vscode.cmake-tools
+      usernamehw.errorlens
+      ms-python.python
+      catppuccin.catppuccin-vsc
+    ];
 
   };
 }
