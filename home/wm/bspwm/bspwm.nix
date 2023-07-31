@@ -7,7 +7,7 @@ let hostname = osConfig.networking.hostName; in
       border_width = 2;
       gapless_monocle = true;
       split_ratio = 0.52;
-      window_gap = 0;
+      window_gap = 4;
       focus_follows_pointer = true;
 
       normal_border_color = "#313244";
