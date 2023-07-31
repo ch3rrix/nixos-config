@@ -9,12 +9,10 @@ let hostname = osConfig.networking.hostName; in
       split_ratio = 0.52;
       window_gap = 0;
 
-      normal_border_color = "#7ccdfd";
-      active_border_color = "#7ccdfd";
-      focused_border_color = "#f5748c";
-      presel-feedback_colour = "#fc9d63";
-
-
+      normal_border_color = "#1e1e2e";
+      active_border_color = "#b4befe";
+      focused_border_color = "#f5c2e7";
+      presel-feedback_colour = "#a6e3a1";
     };
     startupPrograms = [
       "xsetroot -cursor_name left_ptr"
