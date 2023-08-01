@@ -3,7 +3,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Pink-dark";
+      name = "Catppuccin-Mocha-Compact-Pink-dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "pink" ];
         size = "compact";
@@ -11,7 +11,7 @@
           "rimless"
         # "black"
         ];
-        variant = "macchiato";
+        variant = "mocha";
       };
     };
   };
@@ -22,5 +22,9 @@
     size = 26;
     package = pkgs.catppuccin-cursors.mochaPink;
     name = "Catppuccin-Mocha-Pink-Cursors";
+  };
+
+  qt = {
+    platformTheme = "qtct";
   };
 }
