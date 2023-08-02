@@ -7,11 +7,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
     let
       system = "x86_64-linux";
+      nixvimModule = nixvim.homeManagerModules.nixvim;
     in
     {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;

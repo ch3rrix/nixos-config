@@ -11,6 +11,8 @@
       catppuccin.catppuccin-vsc
       vscodevim.vim
       twxs.cmake
+      haskell.haskell
+      rust-lang.rust-analyzer
     ];
 
   };

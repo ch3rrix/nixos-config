@@ -2,7 +2,8 @@
 {
   imports = [
     ./packages
-    ./neovim
+#   ./neovim
+    ./nixvim
     ./vscode
     ./wm
     ./alacritty

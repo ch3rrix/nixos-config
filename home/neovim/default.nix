@@ -8,18 +8,10 @@
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
       vim-nix
+      nvim-tree-lua {
+        plugin = vim-startify;
+        config = "let g:startify_change_to_vcs_root = 0";
+      }
     ];
-    coc = {
-      enable = true;
-      settings = {
-        languageserver = {
-          nixd = {
-            command = "nixd";
-            rootPatterns = [ ".nixd.json" ];
-            filetypes = [ "nix" ];
-          };
-        };
-      };
-    };
   };
 }
