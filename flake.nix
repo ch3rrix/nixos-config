@@ -38,6 +38,7 @@
             ./modules/fish.nix
             ./modules/xdg.nix
             ./modules/physlock.nix
+            ./modules/env-vars.nix
             ./hosts/workplace.nix
           ];
         };
