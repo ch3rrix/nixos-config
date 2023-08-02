@@ -10,6 +10,7 @@
       ms-python.python
       catppuccin.catppuccin-vsc
       vscodevim.vim
+      twxs.cmake
     ];
 
   };

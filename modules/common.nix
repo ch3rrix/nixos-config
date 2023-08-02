@@ -1,8 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    registry.n.flake = inputs.nixpkgs;
+  };
 
   networking = {
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
