@@ -5,6 +5,7 @@
     keybindings = {
       "super + Return" = "alacritty";
       "super + @space" = "rofi -show drun";
+      "super + Escape" = "pkill -USR1 -x sxhkd";
       "super + alt + {q,r}" = "bspc {quit,wm -r}";
       "super + {_,shift + }w" = "bspc node -{c,k}";
       "super + m" = "bspc desktop -l next";
@@ -27,10 +28,11 @@
       "super + alt + shift + {h,j,k,l}" = "bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}";
       "super + {Left,Down,Up,Right}" = "bspc node -v {-20 0,0 20,0 -20,20 0}";
 
-      "super + alt + shift + l" = "physlock";
+      "super + alt + shift + p" = "physlock";
       "super + shift + s" = "
         bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused
       ";
+      "super + shift + Print" = "screenrecord";
     };
     extraOptions = [ "-m -1" ];
   };

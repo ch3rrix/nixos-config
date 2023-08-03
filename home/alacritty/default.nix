@@ -4,6 +4,13 @@
     enable = true;
 
     settings = {
+      font = {
+	normal = {
+	  family = "JetBrains Mono";
+	  style = "Regular";
+	};
+	size = 12;
+      };
       colors = {
         primary = {
           background = "#1E1E2E";

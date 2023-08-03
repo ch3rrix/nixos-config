@@ -40,6 +40,7 @@
             ./modules/physlock.nix
             ./modules/env-vars.nix
             ./hosts/workplace.nix
+	    ./modules/fonts.nix
           ];
         };
       };

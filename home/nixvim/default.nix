@@ -21,6 +21,7 @@
     };
     plugins = {
       lightline.enable = true;
+      surround.enable = true;
       barbar.enable = true;
       clangd-extensions.enable = true;
       cursorline.enable = true;
@@ -39,7 +40,11 @@
         servers = {
           nixd.enable = true;
 	  clangd.enable = true;
+	  cmake.enable = true;
         };
+      };
+      lsp-format = {
+	enable = true;
       };
     };
     extraPlugins = with pkgs.vimPlugins; [

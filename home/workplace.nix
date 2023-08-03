@@ -13,6 +13,7 @@
     ./theme/catppuccin
     ./java
     ./emacs
+    ./fonts
   ];
 
   home = {

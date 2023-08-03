@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ./screenrecord.nix
+  ];
   home.packages = with pkgs; [
     telegram-desktop
     pavucontrol
@@ -15,5 +18,12 @@
     xclip
     ksnip
     cloc
+    translate-shell
+    escrotum
+    ffmpeg-full
+    mpv
+    slop
+    mat2
+    xdragon
   ];
 }
