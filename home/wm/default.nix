@@ -3,6 +3,7 @@
   imports = [
     ./bspwm
 
+    ./picom.nix
     ./dunst.nix
     ./rofi.nix
     ./polybar.nix

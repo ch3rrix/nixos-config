@@ -12,6 +12,7 @@
     ./eww
     ./theme/catppuccin
     ./java
+    ./emacs
   ];
 
   home = {
