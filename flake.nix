@@ -24,6 +24,16 @@
           modules = [
             ./modules/common.nix
             ./modules/xserver.nix
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/home-manager.nix
+            ./modules/pipewire.nix
+            ./modules/fish.nix
+            ./modules/xdg.nix
+            ./modules/physlock.nix
+            ./modules/env-vars.nix
+	    ./modules/fonts.nix
+	    ./modules/adb.nix
             ./hosts/laptop.nix
           ];
         };
