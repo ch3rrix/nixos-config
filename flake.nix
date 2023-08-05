@@ -8,9 +8,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
+    sddm-sugar-candy-nix = {
+      url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
     let
       system = "x86_64-linux";
       nixvimModule = nixvim.homeManagerModules.nixvim;
@@ -32,8 +36,9 @@
             ./modules/xdg.nix
             ./modules/physlock.nix
             ./modules/env-vars.nix
-	    ./modules/fonts.nix
-	    ./modules/adb.nix
+            ./modules/fonts.nix
+            ./modules/adb.nix
+            ./modules/sddm-sugar-candy.nix
             ./hosts/laptop.nix
           ];
         };
@@ -50,7 +55,7 @@
             ./modules/physlock.nix
             ./modules/env-vars.nix
             ./hosts/workplace.nix
-	    ./modules/fonts.nix
+            ./modules/fonts.nix
           ];
         };
       };
