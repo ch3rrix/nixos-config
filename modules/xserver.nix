@@ -5,7 +5,7 @@
     xserver = {
       enable = true;
       layout = "us,ru";
-      xkbOptions = "grp:caps_toggle";
+      xkbOptions = "grp:caps_toggle ctrl:swapcaps";
       libinput = {
         enable = true;
         mouse = {

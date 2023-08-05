@@ -28,6 +28,7 @@
           modules = [
             ./modules/common.nix
             ./modules/xserver.nix
+            ./modules/wacom.nix
             ./modules/common.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix

@@ -8,5 +8,7 @@
             fi
 
     '')
+    pkgs.maim
+    pkgs.scrot
   ];
 }
