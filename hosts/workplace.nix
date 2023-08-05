@@ -6,13 +6,13 @@
   services.printing.enable = true;
   networking.hostName = "workplace";
 
-
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+    initrd.availableKernelModules =
+      [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
     initrd.kernelModules = [ ];
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "kvm-intel" ];
@@ -21,23 +21,21 @@
   };
 
   fileSystems = {
-    "/" =
-      {
-        device = "/dev/disk/by-label/ROOT";
-        fsType = "ext4";
-      };
+    "/" = {
+      device = "/dev/disk/by-label/ROOT";
+      fsType = "ext4";
+    };
 
-    "/boot" =
-      {
-        device = "/dev/disk/by-label/BOOT";
-        fsType = "vfat";
-      };
+    "/boot" = {
+      device = "/dev/disk/by-label/BOOT";
+      fsType = "vfat";
+    };
   };
 
-  swapDevices =
-    [{ device = "/dev/disk/by-label/SWAP"; }];
+  swapDevices = [{ device = "/dev/disk/by-label/SWAP"; }];
 
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.opengl = {
     enable = true;
     driSupport = true;

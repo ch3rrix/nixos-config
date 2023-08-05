@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [
     ./packages
-#   ./neovim
+    #   ./neovim
     ./nixvim
     ./vscode
     ./wm

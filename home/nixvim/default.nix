@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.nixvim = {
     enable = true;
     options = {
@@ -8,7 +7,7 @@
       shiftwidth = 2;
     };
     colorschemes = {
-      catppuccin ={
+      catppuccin = {
         enable = true;
         flavour = "mocha";
         integrations = {
@@ -39,15 +38,12 @@
         enable = true;
         servers = {
           nixd.enable = true;
-	  clangd.enable = true;
-	  cmake.enable = true;
+          clangd.enable = true;
+          cmake.enable = true;
         };
       };
-      lsp-format = {
-	enable = true;
-      };
+      lsp-format = { enable = true; };
     };
-    extraPlugins = with pkgs.vimPlugins; [
-    ];
+    extraPlugins = with pkgs.vimPlugins; [ ];
   };
 }

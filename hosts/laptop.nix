@@ -1,26 +1,22 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   fileSystems = {
-    "/" =
-    { device = "/dev/disk/by-label/root";
+    "/" = {
+      device = "/dev/disk/by-label/root";
       fsType = "xfs";
     };
 
-    "/boot" =
-    { device = "/dev/disk/by-label/boot";
+    "/boot" = {
+      device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
   };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
+  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -32,25 +28,22 @@
     extraModulePackages = [ ];
   };
 
-
   networking = {
     hostName = "laptop"; # Define your hostname.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    networkmanager.enable =
+      true; # Easiest to use and most distros use this by default.
     useDHCP = lib.mkDefault true;
   };
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-  ];
+  environment.systemPackages = with pkgs; [ vim wget git ];
 
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
   };
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 

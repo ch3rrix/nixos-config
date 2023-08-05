@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
-{
-  imports = [
-    ./screenrecord.nix
-  ];
+{ config, pkgs, ... }: {
+  imports = [ ./screenrecord.nix ];
   home.packages = with pkgs; [
     telegram-desktop
     pavucontrol

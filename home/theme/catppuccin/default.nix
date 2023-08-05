@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   gtk = {
     enable = true;
     theme = {
@@ -9,7 +8,7 @@
         size = "compact";
         tweaks = [
           "rimless"
-        # "black"
+          # "black"
         ];
         variant = "mocha";
       };
@@ -24,7 +23,5 @@
     name = "Catppuccin-Mocha-Pink-Cursors";
   };
 
-  qt = {
-    platformTheme = "qtct";
-  };
+  qt = { platformTheme = "qtct"; };
 }

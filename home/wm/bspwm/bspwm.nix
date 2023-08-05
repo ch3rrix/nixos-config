@@ -1,6 +1,6 @@
 { config, pks, lib, osConfig, ... }:
-let hostname = osConfig.networking.hostName; in
-{
+let hostname = osConfig.networking.hostName;
+in {
   xsession.windowManager.bspwm = {
     enable = true;
     settings = {
@@ -16,38 +16,13 @@ let hostname = osConfig.networking.hostName; in
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
-    startupPrograms = [
-      "xsetroot -cursor_name left_ptr"
-    ];
-    monitors =
-      if "${hostname}" == "laptop" then
-        {
-          eDP-1 = [
-            "I"
-            "II"
-            "III"
-            "IV"
-            "V"
-            "VI"
-            "VII"
-            "VIII"
-            "IX"
-            "X"
-          ];
-        }
-      else if "${hostname}" == "workplace" then
-        {
-          HDMI-1 = [
-            "I"
-            "II"
-            "III"
-          ];
-          DP-1 = [
-            "IV"
-            "V"
-            "VI"
-            "VII"
-          ];
-        } else { };
+    startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
+    monitors = if "${hostname}" == "laptop" then {
+      eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+    } else if "${hostname}" == "workplace" then {
+      HDMI-1 = [ "I" "II" "III" ];
+      DP-1 = [ "IV" "V" "VI" "VII" ];
+    } else
+      { };
   };
 }

@@ -1,5 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
-{
+{ config, pkgs, lib, inputs, ... }: {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
   nix = {
@@ -9,7 +8,8 @@
   };
 
   networking = {
-    networkmanager.enable = true; # Easiest to use and most distros use this by default.
+    networkmanager.enable =
+      true; # Easiest to use and most distros use this by default.
     useDHCP = lib.mkDefault true;
   };
 
@@ -24,9 +24,7 @@
   users.users.ch3rrix = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkManager" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
+    packages = with pkgs; [ tree ];
   };
 
   environment.systemPackages = with pkgs; [
