@@ -64,7 +64,7 @@
           ];
         };
 
-        xeniah = nixpkgs.lib.nixosSystem {
+        xenia = nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit self inputs; };
           modules = [
@@ -82,7 +82,7 @@
             ./modules/adb.nix
             ./modules/sddm-sugar-candy.nix
 
-            ./hosts/xeniah.nix
+            ./hosts/xenia.nix
           ];
         };
       };

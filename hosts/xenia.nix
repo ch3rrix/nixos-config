@@ -6,7 +6,7 @@
     ];
 
   networking = {
-    hostName = "xeniah";
+    hostName = "xenia";
   };
 
   boot = {
