@@ -39,6 +39,7 @@
             ./modules/fonts.nix
             ./modules/adb.nix
             ./modules/sddm-sugar-candy.nix
+
             ./hosts/laptop.nix
           ];
         };
@@ -54,8 +55,31 @@
             ./modules/xdg.nix
             ./modules/physlock.nix
             ./modules/env-vars.nix
-            ./hosts/workplace.nix
             ./modules/fonts.nix
+
+            ./hosts/workplace.nix
+          ];
+        };
+
+        xeniah = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs; };
+          modules = [
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/home-manager.nix
+            ./modules/pipewire.nix
+            ./modules/fish.nix
+            ./modules/xdg.nix
+            ./modules/physlock.nix
+            ./modules/env-vars.nix
+            ./modules/fonts.nix
+            ./modules/adb.nix
+            ./modules/sddm-sugar-candy.nix
+
+            ./hosts/xeniah.nix
           ];
         };
       };

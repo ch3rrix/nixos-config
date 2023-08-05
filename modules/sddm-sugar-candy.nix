@@ -20,17 +20,13 @@ in
       ScreenWidth =
         if (config.networking.hostName == "laptop") then
           1366
-        else if (config.networking.hostName == "workplace") then
-          1920
         else
-          { };
+          1920;
       ScreenHeight =
         if (config.networking.hostName == "laptop") then
           768
-        else if (config.networking.hostName == "workplace") then
-          1080
         else
-          { };
+          1080;
       FormPosition = "left";
     };
   };

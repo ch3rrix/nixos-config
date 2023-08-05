@@ -23,7 +23,11 @@ in {
       } else if "${hostname}" == "workplace" then {
         HDMI-1 = [ "I" "II" "III" ];
         DP-1 = [ "IV" "V" "VI" "VII" ];
-      } else
-        { };
+      } else if "${hostname}" == "xeniah" then
+        {
+          HDMI-0 = [ "I" "II" "III" "IV" "V" "VI"];
+          HDMI-1 = [ "VII" "VIII" "IX" "X" ];
+        }
+      else { };
   };
 }
