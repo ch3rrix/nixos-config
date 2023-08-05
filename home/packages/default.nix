@@ -14,18 +14,14 @@
     jq
     dconf
     nixpkgs-fmt
-    flameshot
+    nixfmt
     xclip
     ksnip
     cloc
     translate-shell
-    escrotum
     ffmpeg-full
     mpv
-    slop
-    mat2
-    xdragon
-    scrot
-    maim
+    feh
+    krita
   ];
 }

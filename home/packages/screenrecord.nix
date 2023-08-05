@@ -28,5 +28,9 @@
           fi
       fi
     '')
+    pkgs.slop
+    pkgs.xdragon
+    pkgs.mat2
+    pkgs.ffmpeg-full
   ];
 }
