@@ -39,6 +39,7 @@
       "super + shift + s" =
         "\n        bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused\n      ";
       "super + shift + Print" = "screenrecord";
+      "Print + {_,shift}" = "screenshot -{full,area}";
     };
     extraOptions = [ "-m -1" ];
   };

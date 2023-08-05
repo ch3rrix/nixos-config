@@ -1,5 +1,8 @@
 { config, pkgs, ... }: {
-  imports = [ ./screenrecord.nix ];
+  imports = [
+    ./screenrecord.nix
+    ./screenshot.nix
+  ];
   home.packages = with pkgs; [
     telegram-desktop
     pavucontrol
@@ -22,5 +25,7 @@
     slop
     mat2
     xdragon
+    scrot
+    maim
   ];
 }

@@ -18,7 +18,6 @@
     inputs@{ self, nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
     let
       system = "x86_64-linux";
-      nixvimModule = nixvim.homeManagerModules.nixvim;
     in {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;
       nixosConfigurations = {
