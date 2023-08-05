@@ -22,6 +22,4 @@
     package = pkgs.catppuccin-cursors.mochaPink;
     name = "Catppuccin-Mocha-Pink-Cursors";
   };
-
-  qt = { platformTheme = "qtct"; };
 }
