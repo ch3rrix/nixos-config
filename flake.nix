@@ -56,11 +56,8 @@
             ./modules/xdg.nix
             ./modules/physlock.nix
             ./modules/env-vars.nix
-<<<<<<< HEAD
-=======
             ./modules/qt.nix
             ./hosts/workplace.nix
->>>>>>> 3bb35d556480de3c7c00fb93c2a36a23f2e82766
             ./modules/fonts.nix
 
             ./hosts/workplace.nix
