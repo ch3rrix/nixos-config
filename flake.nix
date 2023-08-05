@@ -18,7 +18,8 @@
     inputs@{ self, nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
     let
       system = "x86_64-linux";
-    in {
+    in
+    {
       formatter."${system}" = nixpkgs.legacyPackages."${system}".nixpkgs-fmt;
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {

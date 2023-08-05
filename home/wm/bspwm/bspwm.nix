@@ -17,12 +17,13 @@ in {
       presel-feedback_colour = "#a6e3a1";
     };
     startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
-    monitors = if "${hostname}" == "laptop" then {
-      eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
-    } else if "${hostname}" == "workplace" then {
-      HDMI-1 = [ "I" "II" "III" ];
-      DP-1 = [ "IV" "V" "VI" "VII" ];
-    } else
-      { };
+    monitors =
+      if "${hostname}" == "laptop" then {
+        eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+      } else if "${hostname}" == "workplace" then {
+        HDMI-1 = [ "I" "II" "III" ];
+        DP-1 = [ "IV" "V" "VI" "VII" ];
+      } else
+        { };
   };
 }

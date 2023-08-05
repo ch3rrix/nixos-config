@@ -2,7 +2,8 @@
 let
   hostname = (config.networking.hostName);
   username = "ch3rrix";
-in {
+in
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
     {
