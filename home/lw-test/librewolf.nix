@@ -118,7 +118,7 @@ in
   meta.maintainers = [ maintainers.rycee maintainers.kira-bruneau ];
 
   imports = [
-    (mkRemovedOptionModule [ "programs" "librewolf" "extensions" ] ''
+    (mkRemovedOptionModule [ "programs" "librewolf1" "extensions" ] ''
 
       Extensions are now managed per-profile. That is, change from
 
@@ -127,16 +127,16 @@ in
       to
 
         programs.librewolf.profiles.myprofile.extensions = [ foo bar ];'')
-    (mkRemovedOptionModule [ "programs" "librewolf" "enableAdobeFlash" ]
+    (mkRemovedOptionModule [ "programs" "librewolf1" "enableAdobeFlash" ]
       "Support for this option has been removed.")
-    (mkRemovedOptionModule [ "programs" "librewolf" "enableGoogleTalk" ]
+    (mkRemovedOptionModule [ "programs" "librewolf1" "enableGoogleTalk" ]
       "Support for this option has been removed.")
-    (mkRemovedOptionModule [ "programs" "librewolf" "enableIcedTea" ]
+    (mkRemovedOptionModule [ "programs" "librewolf1" "enableIcedTea" ]
       "Support for this option has been removed.")
   ];
 
   options = {
-    programs.librewolf = {
+    programs.librewolf1 = {
       enable = mkEnableOption "LibreWolf";
 
       package = mkOption {
