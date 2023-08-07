@@ -48,6 +48,10 @@
           "Nix Packages"
         ];
 
+        extraConfig = ''
+
+	'';
+
         settings = {
           "browser.startup.homepage" = "https://nixos.org";
           "browser.search.region" = "GB";
