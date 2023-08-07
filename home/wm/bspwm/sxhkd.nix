@@ -39,14 +39,7 @@
       "super + shift + s" =
         "\n        bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused\n      ";
       "super + shift + Print" = "screenrecord";
-<<<<<<< HEAD
-      "{shift + ,_} Print" = ''
-        scrot {--select,_} 'screenshot.png' -e 'mv $f /tmp/ ' && notify-send 'Screenshot captured' && dragon -T /tmp/screenshot.png
-      '';
-      #scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/vault/screenshots/ ' && notify-send 'Screenshot captured'
-=======
       "Print + {_,shift}" = "screenshot -{full,area}";
->>>>>>> e0ac9a9b1d864ce2f07e875f049b73609a13b3b4
     };
     extraOptions = [ "-m -1" ];
   };
