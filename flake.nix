@@ -56,7 +56,6 @@
             ./modules/xdg.nix
             ./modules/physlock.nix
             ./modules/env-vars.nix
-            ./modules/qt.nix
             ./hosts/workplace.nix
             ./modules/fonts.nix
 
