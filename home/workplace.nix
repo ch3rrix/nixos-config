@@ -16,7 +16,7 @@
     ./lw-test/librewolf.nix
   ];
 
-  programs.librewolf = {
+  programs.librewolf1 = {
     enable = true;
   };
 
