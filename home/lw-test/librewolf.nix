@@ -16,8 +16,8 @@ let
   #else
   # "${mozillaConfigPath}/firefox";
 
-  profilesPath =
-    if isDarwin then "${librewolfConfigPath}/Profiles" else librewolfConfigPath;
+  profilesPath = librewolfConfigPath;
+  # if isDarwin then "${librewolfConfigPath}/Profiles" else librewolfConfigPath;
 
   # The extensions path shared by all profiles; will not be supported
   # by future Firefox versions.
