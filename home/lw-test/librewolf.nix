@@ -697,7 +697,7 @@ in
 
               salt =
                 if profile.search.default != null then
-                  profile.path + profile.search.default + disclaimer "Firefox"
+                  profile.path + profile.search.default + disclaimer "Librewolf"
                 else
                   null;
             in
