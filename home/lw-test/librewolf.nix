@@ -6,7 +6,7 @@ let
 
   inherit (pkgs.stdenv.hostPlatform) isDarwin;
 
-  cfg = config.programs.librewolf;
+  cfg = config.programs.librewolf1;
 
   jsonFormat = pkgs.formats.json { };
 
