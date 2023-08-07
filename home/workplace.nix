@@ -20,13 +20,50 @@
     enable = true;
     profiles = {
       test = {
+        isDefault = true;
+        search.engines = {
+          "Nix Packages" = {
+            urls = [{
+              template = "https://search.nixos.org/packages";
+              params = [
+                { name = "type"; value = "packages"; }
+                { name = "query"; value = "{searchTerms}"; }
+              ];
+            }];
+
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@np" ];
+          };
+
+          "NixOS Wiki" = {
+            urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+            iconUpdateURL = "https://nixos.wiki/favicon.png";
+            updateInterval = 24 * 60 * 60 * 1000; # every day
+            definedAliases = [ "@nw" ];
+          };
+        }; # search engines
+
+        search.order = [
+          "NixOS Wiki"
+          "Nix Packages"
+        ];
+
+        settings = {
+          "browser.startup.homepage" = "https://nixos.org";
+          "browser.search.region" = "GB";
+          "browser.search.isUS" = false;
+
+          "distribution.searchplugins.defaultLocale" = "en-GB";
+          "general.useragent.locale" = "en-GB";
+          "browser.bookmarks.showMobileBookmarks" = true;
+          "browser.newtabpage.pinned" = [{
+            title = "NixOS";
+            url = "https://nixos.org";
+          }];
+
+        }; #settings
+
         bookmarks = [
-          {
-            name = "wikipedia";
-            tags = [ "wiki" ];
-            keyword = "wiki";
-            url = "https://en.wikipedia.org/wiki/Special:Search?search=%s&go=Go";
-          }
           {
             name = "kernel.org";
             url = "https://www.kernel.org";

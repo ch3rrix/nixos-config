@@ -552,6 +552,7 @@ in
     }] ++ flip mapAttrsToList cfg.profiles (_: profile: {
       "${profilesPath}/${profile.path}/.keep".text = "";
 
+
       "${profilesPath}/${profile.path}/chrome/userChrome.css" =
         mkIf (profile.userChrome != "") { text = profile.userChrome; };
 
