@@ -547,7 +547,7 @@ in
       lib.optional (cfg.package != null) package;
 
     home.file = mkMerge ([{
-      "${firefoxConfigPath}/profiles.ini" =
+      "${librewolfConfigPath}/profiles.ini" =
         mkIf (cfg.profiles != { }) { text = profilesIni; };
     }] ++ flip mapAttrsToList cfg.profiles (_: profile: {
       "${profilesPath}/${profile.path}/.keep".text = "";
