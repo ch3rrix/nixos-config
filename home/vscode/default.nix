@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
-    extensions = with pkgs.vscode-extensions;[
+    extensions = with pkgs.vscode-extensions; [
       ms-vscode.cpptools
       ms-vscode.makefile-tools
       ms-vscode.cmake-tools

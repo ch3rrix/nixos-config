@@ -1,9 +1,19 @@
-{
+{ pkgs, ... }: {
   imports = [
-    ./neovim
-    ./bspwm
+    ./packages
+    #   ./neovim
+    ./nixvim
+    ./vscode
+    ./wm
     ./alacritty
     ./firefox
+    ./git
+    ./eww
+    ./theme/catppuccin
+    ./java
+    ./emacs
+    ./fonts
+    ./gaming
   ];
 
   home = {

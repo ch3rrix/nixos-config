@@ -10,10 +10,8 @@ in
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.${username}.imports = [
-          ../home/${hostname}.nix
-          inputs.nixvim.homeManagerModules.nixvim
-        ];
+        users.${username}.imports =
+          [ ../home/${hostname}.nix inputs.nixvim.homeManagerModules.nixvim ];
       };
     }
   ];

@@ -1,15 +1,14 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, osConfig, ... }: {
   programs.alacritty = {
     enable = true;
 
     settings = {
       font = {
-	normal = {
-	  family = "JetBrains Mono";
-	  style = "Regular";
-	};
-	size = 12;
+        normal = {
+          family = "JetBrains Mono";
+          style = "Regular";
+        };
+        size = if (osConfig.networking.hostName) == "laptop" then 10 else 12;
       };
       colors = {
         primary = {

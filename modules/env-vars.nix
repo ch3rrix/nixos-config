@@ -1,6 +1,1 @@
-{ config, pkgs, ... }:
-{
-  environment.variables = {
-    EDITOR = "nvim";
-  };
-}
+{ config, pkgs, ... }: { environment.variables = { EDITOR = "nvim"; }; }
