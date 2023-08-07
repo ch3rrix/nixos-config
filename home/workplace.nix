@@ -13,7 +13,12 @@
     ./java
     ./emacs
     ./fonts
+    ./lw-test/librewolf.nix
   ];
+
+  programs.librewolf = {
+    enable = true;
+  };
 
   home = {
     username = "ch3rrix";
