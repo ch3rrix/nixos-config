@@ -25,5 +25,7 @@
     slop
     mat2
     xdragon
+    scrot
+    maim
   ];
 }

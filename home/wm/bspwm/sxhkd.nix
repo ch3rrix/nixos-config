@@ -33,6 +33,10 @@
         bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused
       ";
       "super + shift + Print" = "screenrecord";
+      "{shift + ,_} Print" = ''
+        scrot {--select,_} 'screenshot.png' -e 'mv $f /tmp/ ' && notify-send 'Screenshot captured' && dragon -T /tmp/screenshot.png
+      '';
+      #scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/vault/screenshots/ ' && notify-send 'Screenshot captured'
     };
     extraOptions = [ "-m -1" ];
   };
