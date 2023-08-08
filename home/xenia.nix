@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{
   imports = [
     ./packages
     #   ./neovim
@@ -14,6 +14,7 @@
     ./emacs
     ./fonts
     ./graphics
+    ./gaming
   ];
 
   home = {
