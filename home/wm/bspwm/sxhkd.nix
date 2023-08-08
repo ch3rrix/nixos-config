@@ -23,9 +23,9 @@
       "super + {grave,Tab}" = "bspc {node,desktop} -f last";
       "super + {o,i}" =
         "bspc wm -h off; bspc node {older,newer} -f; bspc wm -h on";
-      "super + {_,shift + }{1-9,0}" = "bspc {desktop -f,node -d} '^{1-9,10}'";
       "super + ctrl + {h,j,k,l}" = "bspc node -p {west,south,north,east}";
       "super + ctrl + {1-9}" = "bspc node -o 0.{1-9}";
+      "super + {_,shift + }{1-9,0}" = "bspc {desktop -f,node -d} '^{1-9,10}'";
       "super + ctrl + space" = "bspc node -p cancel";
       "super + ctrl + shift + space" =
         "bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel";
@@ -38,8 +38,8 @@
       "super + alt + shift + p" = "physlock";
       "super + shift + s" =
         "\n        bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused\n      ";
-      "super + shift + Print" = "screenrecord";
-      "Print + {_,shift}" = "screenshot -{full,area}";
+      "Print; r" = "screenrecord";
+      "Print; {f,a}" = "screenshot -{full,area}";
     };
     extraOptions = [ "-m -1" ];
   };
