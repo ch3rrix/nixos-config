@@ -14,7 +14,6 @@
     ./emacs
     ./fonts
     ./graphics
-    ./gaming
   ];
 
   home = {
