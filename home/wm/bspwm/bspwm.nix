@@ -20,7 +20,7 @@ in {
     monitors = if "${hostname}" == "laptop" then {
       eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
     } else if "${hostname}" == "workplace" then {
-      HDMI-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
+      HDMI-1 = [ "I" "II" "III" ];
       DP-1 = [ "IV" "V" "VI" "VII" ];
     } else if "${hostname}" == "xenia" then {
       HDMI-0 = [ "I" "II" "III" "IV" "V" "VI" ];

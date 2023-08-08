@@ -1,11 +1,3 @@
-{ osConfig, ... }:
-let 
-  extraBindings = if (osConfig.networking.hostName == "workplace")
-  then {
-    "super + q; {_,shift + }{1-9,0}" = "bspc {desktop -f,node -d} '^{11-19,20}'";
-  }
-  else {};
-in
 {
   services.sxhkd = {
     enable = true;
@@ -48,7 +40,7 @@ in
         "\n        bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused\n      ";
       "Print; r" = "screenrecord";
       "Print; {f,a}" = "screenshot -{full,area}";
-    }++extraBindings;
+    };
     extraOptions = [ "-m -1" ];
   };
 }
