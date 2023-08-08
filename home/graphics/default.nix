@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  home.pachages = with pkgs; [
+  home.packages = with pkgs; [
     krita
   ];
 }
