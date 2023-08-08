@@ -1,4 +1,4 @@
-{ config, pkgs, osConfig, ... }: {
+{ pkgs, osConfig, ... }: {
   services.polybar = {
     enable = true;
     package = pkgs.polybarFull;
@@ -46,7 +46,7 @@
       "module/bspwm" = {
         type = "internal/bspwm";
 
-        pin-workspaces = true;
+        pin-workspaces = false;
 
         format = "<label-state> <label-mode>";
 

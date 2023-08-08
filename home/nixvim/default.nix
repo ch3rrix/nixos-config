@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   programs.nixvim = {
     enable = true;
     options = {
@@ -37,13 +37,16 @@
       lsp = {
         enable = true;
         servers = {
-          nixd.enable = true;
+          #nixd.enable = true;
+          nil_ls.enable = true;
           clangd.enable = true;
           cmake.enable = true;
         };
       };
       lsp-format = { enable = true; };
     };
-    extraPlugins = with pkgs.vimPlugins; [ ];
   };
+  home.packages = with pkgs; [
+    nil
+  ];
 }
