@@ -1,4 +1,4 @@
-{ config, pks, lib, osConfig, ... }:
+{ osConfig, ... }:
 let hostname = osConfig.networking.hostName;
 in {
   xsession.windowManager.bspwm = {
