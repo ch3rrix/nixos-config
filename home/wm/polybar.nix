@@ -40,7 +40,7 @@
         tray-position = "right";
         modules-left = "bspwm";
         modules-center = "time";
-        modules-right = "xkeyboard pulseaudio";
+        modules-right = "xkeyboard pulseaudio date";
 
         wm-restack = "bspwm";
       }; # bar/bar
@@ -76,16 +76,16 @@
       "module/time" = {
         type = "internal/date";
         interval = 5;
-        time = "%A, %d %B %Y";
-        time-alt = "%I:%M %p";
+        time = "%I:%M %p";
+        time-alt = "%A, %d %B %Y";
         label = "%time%";
       };
 
       "module/date" = {
         type = "internal/date";
         interval = 5;
-        time = "%I:%M %p";
-        time-alt = "%A, %d %B %Y";
+        time = "%A, %d %B %Y";
+        time-alt = "%I:%M %p";
         label = "%time%";
       };
 
