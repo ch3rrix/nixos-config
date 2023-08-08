@@ -22,6 +22,5 @@
     ffmpeg-full
     mpv
     feh
-    krita
   ];
 }
