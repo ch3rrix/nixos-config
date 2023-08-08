@@ -13,6 +13,7 @@
     ./java
     ./emacs
     ./fonts
+    ./graphics
   ];
 
   home = {
