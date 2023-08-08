@@ -28,7 +28,7 @@
           modules = [
             ./modules/common.nix
             ./modules/xserver.nix
-            ./modules/wacom.nix
+            ./modules/tablet.nix
             ./modules/common.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix
@@ -78,8 +78,8 @@
             ./modules/fonts.nix
             ./modules/adb.nix
             ./modules/sddm-sugar-candy.nix
-            #./modules/wacom.nix
-	    ./modules/opentabletdriver.nix
+            ./modules/tablet.nix
+	    #./modules/opentabletdriver.nix
 
             ./hosts/xenia.nix
           ];
