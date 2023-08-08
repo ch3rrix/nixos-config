@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   networking = {
@@ -23,30 +24,37 @@
 
   fileSystems = {
     "/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    }; # /
+      {
+        device = "/dev/disk/by-label/nixos";
+        fsType = "ext4";
+      }; # /
     "/boot" =
-      { device = "/dev/disk/by-label/boot";
+      {
+        device = "/dev/disk/by-label/boot";
         fsType = "vfat";
       }; # /boot
   }; # fileSystems
 
   swapDevices = [
     { device = "/dev/disk/by-label/swap"; }
-    ];
+  ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   hardware = {
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
     nvidia = {
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
+      nvidiaSettings = true;
     }; # nvidia
   }; # hardware
 
-  services.xserver.videoDrivers = [ "nvidia" ];  
+  services.xserver.videoDrivers = [ "nvidia" ];
 }
 
