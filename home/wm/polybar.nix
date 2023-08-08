@@ -26,7 +26,6 @@
         height = "24px";
         radius = 0;
         fixed-center = true;
-        border-size = 4;
         padding = 0;
         module-margin = 1;
         font-0 = "JetBrainsMono Nerd Font:style=Medium:size=11;2";
@@ -35,7 +34,6 @@
         font-3 = "Noto Color Emoji:style=Regular:size=11;2";
 
         background = "#1e1e2e";
-        border-color = "transparent";
 
         tray-position = "right";
         modules-left = "bspwm";
