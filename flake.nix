@@ -78,7 +78,8 @@
             ./modules/fonts.nix
             ./modules/adb.nix
             ./modules/sddm-sugar-candy.nix
-            ./modules/wacom.nix
+            #./modules/wacom.nix
+	    ./modules/opentabletdriver.nix
 
             ./hosts/xenia.nix
           ];

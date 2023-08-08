@@ -16,7 +16,10 @@ in {
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
-    startupPrograms = [ "xsetroot -cursor_name left_ptr" ];
+    startupPrograms = [
+      "xsetroot -cursor_name left_ptr"
+      "polybar"
+    ];
     monitors =
       if "${hostname}" == "laptop" then {
         eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
@@ -25,7 +28,7 @@ in {
         DP-1 = [ "IV" "V" "VI" "VII" ];
       } else if "${hostname}" == "xenia" then
         {
-          HDMI-0 = [ "I" "II" "III" "IV" "V" "VI"];
+          HDMI-0 = [ "I" "II" "III" "IV" "V" "VI" ];
           HDMI-1 = [ "VII" "VIII" "IX" "X" ];
         }
       else { };
