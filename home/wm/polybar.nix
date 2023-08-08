@@ -51,8 +51,8 @@
         format = "<label-state> <label-mode>";
 
         label-focused = "%name%";
-        label-focused-foreground = "#cdd6f4";
-        label-focused-background = "#94e2d5";
+        label-focused-foreground = "#313244";
+        label-focused-background = "#cba6f7";
         label-focused-padding = 2;
 
         label-occupied = "%name%";
@@ -92,7 +92,7 @@
         use-ui-max = if osConfig.networking.hostName == "workplace" then true else false;
         interval = 5;
         format-volume = "<ramp-volume><label-volume>";
-        format-volume-foreground = "#a633a1";
+        format-volume-foreground = "#cdd6f4";
         label-volume = "%percentage%%";
         label-volume-padding = 1;
 
