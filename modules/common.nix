@@ -3,6 +3,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-20.3.11"
+                "electron-13.6.9"
   ];
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
@@ -10,7 +11,16 @@
     registry.n.flake = inputs.nixpkgs;
   };
 
-  hardware.keyboard.anne-pro.enable = true;
+  services.udev = {
+    enable = true;
+    extraRules = ''
+      SUBSYSTEM=="input", GROUP="input", MODE="0666"
+
+      # For ANNE PRO 2D
+      SUBSYSTEM=="usb", ATTRS{idVendor}=="3311", ATTRS{idProduct}=="a298", MODE="0666", GROUP="plugdev"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="3311", ATTRS{idProduct}=="a298", MODE="0666", GROUP="plugdev"
+    '';
+  };
 
   networking = {
     networkmanager.enable =
