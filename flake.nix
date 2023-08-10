@@ -16,7 +16,7 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, localNix, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
+    inputs@{ self, nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
     let
       system = "x86_64-linux";
     in

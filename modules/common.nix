@@ -10,7 +10,7 @@
     registry.n.flake = inputs.nixpkgs;
   };
 
-  hardware.keyboard.anne-pro = enable;
+  hardware.keyboard.anne-pro.enable = true;
 
   networking = {
     networkmanager.enable =
