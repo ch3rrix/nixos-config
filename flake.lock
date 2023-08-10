@@ -100,7 +100,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "localNix"
         ]
       },
       "locked": {
@@ -117,13 +117,25 @@
         "type": "github"
       }
     },
+    "localNix": {
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-54USNd2SI/8rO82YqSEtkJTqB6YqE1J1FIWwELxBEWs=",
+        "path": "/home/ch3rrix/dev/nixpkgs-test",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/ch3rrix/dev/nixpkgs-test",
+        "type": "path"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1691368598,
-        "narHash": "sha256-ia7li22keBBbj02tEdqjVeLtc7ZlSBuhUk+7XTUFr14=",
+        "lastModified": 1691472822,
+        "narHash": "sha256-XVfYZ2oB3lNPVq6sHCY9WkdQ8lHoIDzzbpg8bB6oBxA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5a8e9243812ba528000995b294292d3b5e120947",
+        "rev": "41c7605718399dcfa53dd7083793b6ae3bc969ff",
         "type": "github"
       },
       "original": {
@@ -241,6 +253,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "localNix": "localNix",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "sddm-sugar-candy-nix": "sddm-sugar-candy-nix"

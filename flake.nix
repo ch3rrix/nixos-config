@@ -2,10 +2,12 @@
   description = "ch3rrix's NixOS configuration";
 
   inputs = {
+    localNix.url = "path:/home/ch3rrix/dev/nixpkgs-test";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+#     inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "localNix";
     };
     nixvim.url = "github:nix-community/nixvim";
     sddm-sugar-candy-nix = {
@@ -15,7 +17,7 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
+    inputs@{ self, nixpkgs, localNix, home-manager, nixvim, sddm-sugar-candy-nix, ... }:
     let
       system = "x86_64-linux";
     in
