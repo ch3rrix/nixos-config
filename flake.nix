@@ -2,12 +2,11 @@
   description = "ch3rrix's NixOS configuration";
 
   inputs = {
-    localNix.url = "path:/home/ch3rrix/dev/nixpkgs-test";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:/ch3rrix/nixpkgs-test";
     home-manager = {
       url = "github:nix-community/home-manager";
-#     inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs.follows = "localNix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim.url = "github:nix-community/nixvim";
     sddm-sugar-candy-nix = {
@@ -81,7 +80,7 @@
             ./modules/adb.nix
             ./modules/sddm-sugar-candy.nix
             ./modules/tablet.nix
-	    #./modules/opentabletdriver.nix
+            #./modules/opentabletdriver.nix
 
             ./hosts/xenia.nix
           ];

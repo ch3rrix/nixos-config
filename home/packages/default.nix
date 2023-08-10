@@ -22,5 +22,6 @@
     ffmpeg-full
     mpv
     feh
+    (callPackage /home/ch3rrix/dev/nixpkgs-test/pkgs/applications/misc/hexcore-link { })
   ];
 }

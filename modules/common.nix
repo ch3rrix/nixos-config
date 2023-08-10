@@ -1,11 +1,16 @@
 { config, pkgs, lib, inputs, ... }: {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-20.3.11"
+  ];
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
     nixPath = [ "nixpkgs=${pkgs.path}" ];
     registry.n.flake = inputs.nixpkgs;
   };
+
+  hardware.keyboard.anne-pro = enable;
 
   networking = {
     networkmanager.enable =
