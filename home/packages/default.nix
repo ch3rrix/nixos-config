@@ -22,8 +22,5 @@
     ffmpeg-full
     mpv
     feh
-    obinskit
-    (callPackage /home/ch3rrix/dev/nixpkgs-test/pkgs/applications/misc/hexcore-link { })
-    (callPackage ./obinskit.nix { })
   ];
 }
