@@ -38,6 +38,7 @@
         enable = true;
         servers = {
           #nixd.enable = true;
+	  jsonls.enable = true;
           nil_ls.enable = true;
           clangd.enable = true;
           cmake.enable = true;

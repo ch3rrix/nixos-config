@@ -1,0 +1,46 @@
+@nix { "action": "setPhase", "phase": "unpackPhase" }
+unpacking sources
+unpacking source archive /nix/store/mxqm5r24izzn4z41kykiaa20ka17fcl5-source
+source root is source
+@nix { "action": "setPhase", "phase": "patchPhase" }
+patching sources
+@nix { "action": "setPhase", "phase": "updateAutotoolsGnuConfigScriptsPhase" }
+updateAutotoolsGnuConfigScriptsPhase
+@nix { "action": "setPhase", "phase": "configurePhase" }
+configuring
+no configure script, doing nothing
+@nix { "action": "setPhase", "phase": "buildPhase" }
+building
+build flags: SHELL=/nix/store/ir0j7zqlw9dc49grmwplppc7gh0s40yf-bash-5.2-p15/bin/bash
+fontforge -script scripts/fontexport.pe -ttf src/LiberationMono-Regular.sfd src/LiberationMono-Bold.sfd src/LiberationMono-Italic.sfd src/LiberationMono-BoldItalic.sfd src/LiberationSans-Reg>
+Copyright (c) 2000-2023. See AUTHORS for Contributors.
+ License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ with many parts BSD <http://fontforge.org/license.html>. Please read LICENSE.
+ Version: 20230101
+ Based on sources from 2023-01-01 00:00 UTC-D.
+Generating ttf from src/LiberationMono-Regular.sfd
+Generating ttf from src/LiberationMono-Bold.sfd
+Generating ttf from src/LiberationMono-Italic.sfd
+Generating ttf from src/LiberationMono-BoldItalic.sfd
+Generating ttf from src/LiberationSans-Regular.sfd
+Generating ttf from src/LiberationSans-Bold.sfd
+Generating ttf from src/LiberationSans-Italic.sfd
+Generating ttf from src/LiberationSans-BoldItalic.sfd
+Lookup subtable contains unused glyph afii10066.alt1 making the whole subtable invalid
+Lookup subtable contains unused glyph afii10068.alt1 making the whole subtable invalid
+Lookup subtable contains unused glyph afii10069.alt1 making the whole subtable invalid
+Lookup subtable contains unused glyph afii10081.alt1 making the whole subtable invalid
+Lookup subtable contains unused glyph afii10084.alt1 making the whole subtable invalid
+Lookup subtable contains unused glyph afii10090.alt1 making the whole subtable invalid
+Generating ttf from src/LiberationSerif-Regular.sfd
+Generating ttf from src/LiberationSerif-Bold.sfd
+Note: On Windows many apps can have problems with this font's kerning, because 1 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To a>
+Generating ttf from src/LiberationSerif-Italic.sfd
+Note: On Windows many apps can have problems with this font's kerning, because 1 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To a>
+Generating ttf from src/LiberationSerif-BoldItalic.sfd
+Note: On Windows many apps can have problems with this font's kerning, because 4 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To a>
+mkdir -p liberation-fonts-ttf-1.07.5
+mv src/LiberationMono-Regular.ttf src/LiberationMono-Bold.ttf src/LiberationMono-Italic.ttf src/LiberationMono-BoldItalic.ttf src/LiberationSans-Regular.ttf src/LiberationSans-Bold.ttf src/L>
+@nix { "action": "setPhase", "phase": "installPhase" }
+installing
+install: cannot stat 'README': No such file or directory

@@ -1,0 +1,22 @@
+error: builder for '/nix/store/mzqzk89bj3g7q09nirwnyiz2r6lilisr-liberation-fonts-1.07.5.drv' failed with exit code 1;
+       last 10 log lines:
+       > Generating ttf from src/LiberationSerif-Bold.sfd
+       > Note: On Windows many apps can have problems with this font's kerning, because 1 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To avoid this, go to Generate, Options, and check the "Windows-compatible 'kern'" option.
+       > Generating ttf from src/LiberationSerif-Italic.sfd
+       > Note: On Windows many apps can have problems with this font's kerning, because 1 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To avoid this, go to Generate, Options, and check the "Windows-compatible 'kern'" option.
+       > Generating ttf from src/LiberationSerif-BoldItalic.sfd
+       > Note: On Windows many apps can have problems with this font's kerning, because 4 of its glyph kern pairs cannot be mapped to unicode-BMP kern pairs (eg, they have a Unicode value of -1) To avoid this, go to Generate, Options, and check the "Windows-compatible 'kern'" option.
+       > mkdir -p liberation-fonts-ttf-1.07.5
+       > mv src/LiberationMono-Regular.ttf src/LiberationMono-Bold.ttf src/LiberationMono-Italic.ttf src/LiberationMono-BoldItalic.ttf src/LiberationSans-Regular.ttf src/LiberationSans-Bold.ttf src/LiberationSans-Italic.ttf src/LiberationSans-BoldItalic.ttf src/LiberationSerif-Regular.ttf src/LiberationSerif-Bold.ttf src/LiberationSerif-Italic.ttf src/LiberationSerif-BoldItalic.ttf liberation-fonts-ttf-1.07.5
+       > installing
+       > install: cannot stat 'README': No such file or directory
+       For full logs, run 'nix log /nix/store/mzqzk89bj3g7q09nirwnyiz2r6lilisr-liberation-fonts-1.07.5.drv'.
+error: 1 dependencies of derivation '/nix/store/a6j7czkrdh8ykh88xwkig5h25g148h8d-fonts.conf.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/3f1i4dxk7fyl5wdm1r86pg4adrscfjp8-libreoffice-7.5.4.1.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/izk948gliclcjrjb2y38mim5a613gpcm-libreoffice-7.5.4.1-wrapped.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/zwnsmz0v536xh06xi25hw06wy79pjfcn-home-manager-path.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/6gzvk50xz0z6z6gk5yqapp3p2yndiq81-home-manager-generation.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/1g1zzfzlvdfw49jcbb8rswq4xj6pmnkg-user-environment.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/q8zam38zkihrqmcr24rv12gx0a8j78md-etc.drv' failed to build
+error: 1 dependencies of derivation '/nix/store/p6jw1zaidhh5i35mq547grfsflav0ykg-nixos-system-workplace-23.11.20230814.6e28791.drv' failed to build
+
