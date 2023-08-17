@@ -13,6 +13,7 @@
     ./java
     ./emacs
     ./fonts
+    ./fish
   ];
 
   home = {
