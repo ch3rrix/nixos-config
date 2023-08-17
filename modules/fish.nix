@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let username = "ch3rrix";
 in {
   programs.fish.enable = true;

@@ -58,6 +58,7 @@
             ./modules/env-vars.nix
             ./hosts/workplace.nix
             ./modules/fonts.nix
+            ./modules/sddm-sugar-candy.nix
 
             ./hosts/workplace.nix
           ];
