@@ -16,7 +16,7 @@ in {
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
-    startupPrograms = [ "xsetroot -cursor_name left_ptr" "polybar" ];
+    startupPrograms = [ "xsetroot -cursor_name left_ptr" "polybar" "feh --bg-scale /etc/nixos/home/wm/wallpapers/wallpaper1.png"];
     monitors = if "${hostname}" == "laptop" then {
       eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
     } else if "${hostname}" == "workplace" then {
