@@ -7,6 +7,8 @@
     registry.n.flake = inputs.nixpkgs;
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   networking = {
     networkmanager.enable =
       true; # Easiest to use and most distros use this by default.

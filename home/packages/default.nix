@@ -22,5 +22,7 @@
     ffmpeg-full
     mpv
     feh
+    qmk
+    unrar
   ];
 }
