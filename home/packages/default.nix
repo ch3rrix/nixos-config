@@ -24,5 +24,6 @@
     feh
     qmk
     unrar
+    (callPackage ./hexcore-link {} )
   ];
 }
