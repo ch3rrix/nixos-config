@@ -28,7 +28,7 @@
       "super + {Left,Down,Up,Right}" = "bspc node -v {-20 0,0 20,0 -20,20 0}";
 
       "super + alt + shift + p" = "physlock";
-      "super + shift + s" = "\n        bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused\n      ";
+      "super + shift + s" = "bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused";
       "Print; r" = "screenrecord";
       "Print; {f,a}" = "screenshot -{full,area}";
     };

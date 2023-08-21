@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
     (pkgs.writers.writeBashBin "screenshot" ''
            if [[ "$1" == "-area" ]] ; then

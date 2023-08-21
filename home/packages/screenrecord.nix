@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
     (pkgs.writers.writeDashBin "screenrecord" ''
       PID_FILE="/tmp/screencast.pid"
