@@ -1,8 +1,10 @@
-{ config, pkgs, ... }:
-let
-  profileName = "name";
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  profileName = "name";
+in {
   programs.firefox = {
     profiles.${profileName}.userChrome = ''
           :root {
@@ -285,7 +287,7 @@ in
               --uc-win-ctrl-btn-width: 30px;
               --uc-win-ctrl-padding: 12px;
           }
-    
+
           @media (-moz-gtk-csd-minimize-button),
           (-moz-gtk-csd-maximize-button),
           (-moz-gtk-csd-close-button) {
@@ -293,7 +295,7 @@ in
                   --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 1);
               }
           }
-    
+
           @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
           (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
           (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
@@ -301,7 +303,7 @@ in
                   --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 2);
               }
           }
-    
+
           @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
               #navigator-toolbox {
                   --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);

@@ -1,14 +1,19 @@
-{ config, pkgs, inputs, outputs, sddm-sugar-candy-nix, ... }:
-let
-  hostname = (config.networking.hostName);
-  username = "ch3rrix";
-in
 {
+  config,
+  pkgs,
+  inputs,
+  outputs,
+  sddm-sugar-candy-nix,
+  ...
+}: let
+  hostname = config.networking.hostName;
+  username = "ch3rrix";
+in {
   imports = [
     inputs.sddm-sugar-candy-nix.nixosModules.default
     {
       nixpkgs = {
-        overlays = [ inputs.sddm-sugar-candy-nix.overlays.default ];
+        overlays = [inputs.sddm-sugar-candy-nix.overlays.default];
       };
     }
   ];
@@ -18,15 +23,13 @@ in
 
     settings = {
       ScreenWidth =
-        if (config.networking.hostName == "laptop") then
-          1366
-        else
-          1920;
+        if (config.networking.hostName == "laptop")
+        then 1366
+        else 1920;
       ScreenHeight =
-        if (config.networking.hostName == "laptop") then
-          768
-        else
-          1080;
+        if (config.networking.hostName == "laptop")
+        then 768
+        else 1080;
       FormPosition = "left";
     };
   };

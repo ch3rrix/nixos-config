@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./screenrecord.nix
     ./screenshot.nix
@@ -24,6 +28,5 @@
     feh
     qmk
     unrar
-    (callPackage ./hexcore-link {} )
   ];
 }

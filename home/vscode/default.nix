@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = false;
@@ -15,6 +19,5 @@
       haskell.haskell
       rust-lang.rust-analyzer
     ];
-
   };
 }

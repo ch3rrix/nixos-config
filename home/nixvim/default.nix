@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     options = {
@@ -43,7 +43,7 @@
           cmake.enable = true;
         };
       };
-      lsp-format = { enable = true; };
+      lsp-format = {enable = true;};
     };
   };
   home.packages = with pkgs; [

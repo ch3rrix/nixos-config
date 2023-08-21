@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   fonts = {
     packages = with pkgs; [
       corefonts
@@ -15,9 +19,9 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Fira Code" "FireCode Nerd Font" ];
-        sansSerif = [ "Fira Sans" "Ubuntu" "DejaVu Sans" "Noto Sans" ];
-        serif = [ "Roboto Slab" "PT Serif" "Liberation Serif" "Noto Serif" ];
+        monospace = ["Fira Code" "FireCode Nerd Font"];
+        sansSerif = ["Fira Sans" "Ubuntu" "DejaVu Sans" "Noto Sans"];
+        serif = ["Roboto Slab" "PT Serif" "Liberation Serif" "Noto Serif"];
       };
     };
   };

@@ -1,8 +1,12 @@
-{ config, pkgs, lib, modulesPath, ... }:
-
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  config,
+  pkgs,
+  lib,
+  modulesPath,
+  ...
+}: {
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   fileSystems = {
     "/" = {
@@ -16,16 +20,16 @@
     };
   };
 
-  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
+  swapDevices = [{device = "/dev/disk/by-label/swap";}];
 
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
-    initrd.kernelModules = [ ];
+    initrd.availableKernelModules = ["xhci_pci" "ahci" "usbhid" "sd_mod"];
+    initrd.kernelModules = [];
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
   };
 
   networking = {
@@ -35,7 +39,7 @@
     useDHCP = lib.mkDefault true;
   };
 
-  environment.systemPackages = with pkgs; [ vim wget git ];
+  environment.systemPackages = with pkgs; [vim wget git];
 
   hardware.opengl = {
     enable = true;
@@ -48,6 +52,4 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
-

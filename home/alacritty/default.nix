@@ -1,4 +1,9 @@
-{ config, pkgs, osConfig, ... }: {
+{
+  config,
+  pkgs,
+  osConfig,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
 
@@ -8,7 +13,10 @@
           family = "JetBrains Mono";
           style = "Regular";
         };
-        size = if (osConfig.networking.hostName) == "laptop" then 10 else 12;
+        size =
+          if (osConfig.networking.hostName) == "laptop"
+          then 10
+          else 12;
       };
       colors = {
         primary = {

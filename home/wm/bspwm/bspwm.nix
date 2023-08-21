@@ -1,5 +1,5 @@
-{ osConfig, ... }:
-let hostname = osConfig.networking.hostName;
+{osConfig, ...}: let
+  hostname = osConfig.networking.hostName;
 in {
   xsession.windowManager.bspwm = {
     enable = true;
@@ -16,16 +16,22 @@ in {
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
-    startupPrograms = [ "xsetroot -cursor_name left_ptr" "polybar" "feh --bg-scale /etc/nixos/home/wm/wallpapers/wallpaper1.png"];
-    monitors = if "${hostname}" == "laptop" then {
-      eDP-1 = [ "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X" ];
-    } else if "${hostname}" == "workplace" then {
-      HDMI-1 = [ "I" "II" "III" ];
-      DP-1 = [ "IV" "V" "VI" "VII" ];
-    } else if "${hostname}" == "xenia" then {
-      HDMI-0 = [ "I" "II" "III" "IV" "V" "VI" ];
-      HDMI-1 = [ "VII" "VIII" "IX" "X" ];
-    } else
-      { };
+    startupPrograms = ["xsetroot -cursor_name left_ptr" "polybar" "feh --bg-scale /etc/nixos/home/wm/wallpapers/wallpaper1.png"];
+    monitors =
+      if "${hostname}" == "laptop"
+      then {
+        eDP-1 = ["I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X"];
+      }
+      else if "${hostname}" == "workplace"
+      then {
+        HDMI-1 = ["I" "II" "III"];
+        DP-1 = ["IV" "V" "VI" "VII"];
+      }
+      else if "${hostname}" == "xenia"
+      then {
+        HDMI-0 = ["I" "II" "III" "IV" "V" "VI"];
+        HDMI-1 = ["VII" "VIII" "IX" "X"];
+      }
+      else {};
   };
 }

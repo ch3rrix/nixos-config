@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.screen-locker.xautolock = {
     enable = true;
     detectSleep = true;
@@ -8,5 +12,4 @@
     enable = true;
     inactiveInterval = 10;
   };
-
 }

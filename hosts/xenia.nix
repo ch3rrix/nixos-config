@@ -1,10 +1,13 @@
-{ config, pkgs, lib, modulesPath, ... }:
-
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  config,
+  pkgs,
+  lib,
+  modulesPath,
+  ...
+}: {
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
   networking = {
     hostName = "xenia";
@@ -12,31 +15,29 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ ];
+      availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+      kernelModules = [];
     }; # initrd
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
   }; # boot
 
   fileSystems = {
-    "/" =
-      {
-        device = "/dev/disk/by-label/nixos";
-        fsType = "ext4";
-      }; # /
-    "/boot" =
-      {
-        device = "/dev/disk/by-label/boot";
-        fsType = "vfat";
-      }; # /boot
+    "/" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    }; # /
+    "/boot" = {
+      device = "/dev/disk/by-label/boot";
+      fsType = "vfat";
+    }; # /boot
   }; # fileSystems
 
   swapDevices = [
-    { device = "/dev/disk/by-label/swap"; }
+    {device = "/dev/disk/by-label/swap";}
   ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
@@ -55,6 +56,5 @@
     }; # nvidia
   }; # hardware
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 }
-

@@ -1,9 +1,14 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    settings.experimental-features = ["nix-command" "flakes"];
+    nixPath = ["nixpkgs=${pkgs.path}"];
     registry.n.flake = inputs.nixpkgs;
   };
 
@@ -25,8 +30,8 @@
 
   users.users.ch3rrix = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkManager" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ tree ];
+    extraGroups = ["wheel" "networkManager"]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [tree];
   };
 
   environment.systemPackages = with pkgs; [

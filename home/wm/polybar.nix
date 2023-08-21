@@ -1,4 +1,8 @@
-{ pkgs, osConfig, ... }: {
+{
+  pkgs,
+  osConfig,
+  ...
+}: {
   services.polybar = {
     enable = true;
     package = pkgs.polybarFull;
@@ -89,7 +93,10 @@
 
       "module/pulseaudio" = {
         type = "internal/pulseaudio";
-        use-ui-max = if osConfig.networking.hostName == "workplace" then true else false;
+        use-ui-max =
+          if osConfig.networking.hostName == "workplace"
+          then true
+          else false;
         interval = 5;
         format-volume = "<ramp-volume><label-volume>";
         format-volume-foreground = "#cdd6f4";

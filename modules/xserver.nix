@@ -1,11 +1,14 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services = {
     xserver = {
       enable = true;
       layout = "us,ru";
       xkbOptions = "grp:caps_toggle";
+      excludePackages = [pkgs.xterm];
       libinput = {
         enable = true;
         mouse = {
@@ -13,7 +16,9 @@
           accelProfile = "flat";
         };
       };
-      windowManager.bspwm.enable = true;
+      windowManager = {
+        bspwm.enable = true;
+      };
       displayManager = {
         defaultSession = "none+bspwm";
         sddm.enable = true;

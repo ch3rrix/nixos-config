@@ -1,3 +1,3 @@
 {
-  imports = [ ./bspwm.nix ./sxhkd.nix ./workplace.nix ];
+  imports = [./bspwm.nix ./sxhkd.nix ./workplace.nix];
 }
