@@ -11,6 +11,11 @@
     nixPath = ["nixpkgs=${pkgs.path}"];
     registry.n.flake = inputs.nixpkgs;
   };
+            
+              nixpkgs.config.permittedInsecurePackages = [
+                "electron-21.4.0"
+              ];
+           
 
   hardware.keyboard.qmk.enable = true;
 
@@ -38,7 +43,6 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    nixd
   ];
 
   system.stateVersion = "23.05"; # Did you read the comment?

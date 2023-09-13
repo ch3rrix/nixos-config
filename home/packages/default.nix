@@ -28,5 +28,8 @@
     feh
     qmk
     unrar
+    exa
+    pb_cli
+
   ];
 }

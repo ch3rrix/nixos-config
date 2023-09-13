@@ -6,7 +6,6 @@
            elif [[ "$1" == "-full" ]] ; then
       maim --hidecursor /tmp/screenshot.png && dragon -T /tmp/screenshot.png
            fi
-
     '')
     pkgs.maim
     pkgs.scrot

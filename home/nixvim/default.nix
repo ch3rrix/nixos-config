@@ -19,6 +19,7 @@
       };
     };
     plugins = {
+      lspsaga.enable = true;
       lightline.enable = true;
       surround.enable = true;
       barbar.enable = true;
@@ -29,6 +30,7 @@
       markdown-preview.enable = true;
       oil.enable = true;
       telescope.enable = true;
+      cmp-fuzzy-buffer.enable = true;
 
       neo-tree = {
         enable = true;
@@ -37,6 +39,7 @@
       lsp = {
         enable = true;
         servers = {
+	  pylsp.enable = true;
           #nixd.enable = true;
           nil_ls.enable = true;
           clangd.enable = true;

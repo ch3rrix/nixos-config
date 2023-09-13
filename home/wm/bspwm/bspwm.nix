@@ -16,6 +16,11 @@ in {
       focused_border_color = "#f5c2e7";
       presel-feedback_colour = "#a6e3a1";
     };
+    rules = {
+      "*:pavucontrol" = {
+	state = "floating";
+      };
+    };
     startupPrograms = ["xsetroot -cursor_name left_ptr" "polybar" "feh --bg-scale /etc/nixos/home/wm/wallpapers/wallpaper1.png"];
     monitors =
       if "${hostname}" == "laptop"
@@ -24,8 +29,8 @@ in {
       }
       else if "${hostname}" == "workplace"
       then {
-        HDMI-1 = ["I" "II" "III"];
-        DP-1 = ["IV" "V" "VI" "VII"];
+        HDMI-1 = ["I" "II" "III" "IV"];
+        DP-1 = ["V" "VI" "VII" "VIII"];
       }
       else if "${hostname}" == "xenia"
       then {

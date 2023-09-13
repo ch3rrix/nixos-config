@@ -12,8 +12,8 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    #alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    #alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -22,12 +22,12 @@
     home-manager,
     nixvim,
     sddm-sugar-candy-nix,
-    alejandra,
+    #alejandra,
     ...
   }: let
     system = "x86_64-linux";
   in {
-    formatter."${system}" = nixpkgs.legacyPackages."${system}".alejandra;
+    #formatter."${system}" = nixpkgs.legacyPackages."${system}".alejandra;
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -66,9 +66,9 @@
           ./hosts/workplace.nix
           ./modules/fonts.nix
           ./modules/sddm-sugar-candy.nix
-          {
-            environment.systemPackages = [alejandra.defaultPackage.${system}];
-          }
+          #{
+          #  environment.systemPackages = [alejandra.defaultPackage.${system}];
+          #}
 
           ./hosts/workplace.nix
         ];
