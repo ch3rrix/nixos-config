@@ -4,12 +4,12 @@
 }: {
   imports = [
     ./bspwm
-    ./rofi
 
-    ./picom.nix
-    ./dunst.nix
-    ./polybar.nix
-    #   ./screen-lock.nix
-    ./xss-lock.nix
+    ../programs/rofi
+    ../programs/picom
+    ../programs/dunst
+    ../programs/polybar
+    #   ../screen-lock
+    ../programs/xss-lock
   ];
 }

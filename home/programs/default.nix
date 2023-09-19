@@ -3,8 +3,8 @@
 , ...
 }: {
   imports = [
-    ./screenrecord.nix
-    ./screenshot.nix
+    ./packages/screenrecord.nix
+    ./packages/screenshot.nix
   ];
   home.packages = with pkgs; [
     telegram-desktop
@@ -33,8 +33,9 @@
     fzf
     pb_cli
     #lite-xl
+    htop-vim
 
     obsidian
-    (callPackage ./spotube { })
+    #(callPackage ./packages/spotube { })
   ];
 }

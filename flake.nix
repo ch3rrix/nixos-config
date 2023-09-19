@@ -70,11 +70,12 @@
             ./modules/fonts.nix
             ./modules/sddm-sugar-candy.nix
             ./modules/awesome.nix
+            ./modules/sway.nix
             #./modules/kde
             #./modules/plasma.nix
 
 
-	    ./modules/zram.nix
+            ./modules/zram.nix
             ./hosts/workplace.nix
           ];
         };
