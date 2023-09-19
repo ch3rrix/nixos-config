@@ -1,7 +1,13 @@
-{}:
 {
-  imports = [ ./bspwm/bspwm.nix ];
+  imports = [
+  ./bspwm/bspwm.nix
+  ./picom.nix
+  ../services/plasma-bspwm.nix
+  ];
   xsession.windowManager.bspwm = {
+    settings = {
+      "-m HDMI-1 top_padding" = 34;
+    };
     rules = {
       "*:pavucontrol" = { state = "floating"; };
       "*:yakuake" = { state = "floating"; };

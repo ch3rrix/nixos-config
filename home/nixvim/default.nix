@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.nixvim = {
     enable = true;
     options = {
@@ -17,6 +17,8 @@
           telescope = true;
         };
       };
+      onedark.enable = false;
+      one.enable = false;
     };
     plugins = {
       lspsaga.enable = true;
@@ -39,14 +41,16 @@
       lsp = {
         enable = true;
         servers = {
-	  pylsp.enable = true;
-          #nixd.enable = true;
-          nil_ls.enable = true;
+          lua-ls.enable = true;
+          lua-ls.filetypes = [ "lua" ];
+          pylsp.enable = true;
+          nixd.enable = true;
+          #nil_ls.enable = true;
           clangd.enable = true;
           cmake.enable = true;
         };
       };
-      lsp-format = {enable = true;};
+      lsp-format = { enable = true; };
     };
   };
   home.packages = with pkgs; [

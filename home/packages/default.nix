@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     ./screenrecord.nix
@@ -29,7 +28,13 @@
     qmk
     unrar
     exa
+    ripgrep
+    sd
+    fzf
     pb_cli
+    #lite-xl
 
+    obsidian
+    (callPackage ./spotube { })
   ];
 }

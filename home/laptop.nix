@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./packages
     #   ./neovim
@@ -8,7 +8,6 @@
     ./alacritty
     ./firefox
     ./git
-    ./eww
     ./theme/catppuccin
     ./java
     ./emacs

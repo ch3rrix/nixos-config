@@ -8,7 +8,6 @@
     ./alacritty
     ./firefox
     ./git
-    ./eww
     ./theme/catppuccin
     ./java
     ./emacs

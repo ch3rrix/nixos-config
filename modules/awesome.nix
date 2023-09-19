@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  xsession.windowManager.awesome = {
+  services.xserver.windowManager.awesome = {
     enable = true;
     luaModules = with pkgs.luaPackages; [
       vicious

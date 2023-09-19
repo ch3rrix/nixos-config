@@ -1,14 +1,13 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./packages
     #   ./neovim
     ./nixvim
     ./vscode
-    ./wm
+    ./wm/bspwm.nix
     ./alacritty
     ./firefox
     ./git
-    ./eww
     ./theme/catppuccin
     ./java
     ./emacs

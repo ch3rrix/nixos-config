@@ -1,41 +1,20 @@
-{ stdenv, lib
-, fetchurl
-, alsaLib
-, openssl
-, zlib
-, pulseaudio
-, autoPatchelfHook
+{ fetchFromGitHub
+, flutter
+, lib
 }:
-
-stdenv.mkDerivation rec {
+flutter.buildFlutterApplication rec {
   pname = "spotube";
-  version = "3.1.1";
+  version = "3.1.2";
 
-  src = fetchurl {
-    url = "https://github.com/KRTirtho/spotube/releases/download/v${version}/spotube-linux-${version}-x86_64.tar.xz";
-    sha256 = "";
+  src = fetchFromGitHub {
+    owner = "KRTirtho";
+    repo = "spotube";
+    #rev = "master";
+    hash = "";
+    fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-  ];
-
-  buildInputs = [
-    alsaLib
-    openssl
-    zlib
-    pulseaudio
-  ];
-
-  sourceRoot = ".";
-
-  installPhase = ''
-    install -m755 -D studio-link-standalone-v${version} $out/bin/studio-link
-  '';
-
-  meta = with lib; {
-    homepage = "https://spotube.krtirtho.dev/";
-    description = "A fast, modern, lightweight & efficient Spotify Music Client for every platform";
-    platforms = platforms.linux;
-  };
+  #pubspecLockFile = ./pubspec.lock;
+  #depsListFile = ./deps.json;
+  #vendorHash = lib.fakeHash;
 }

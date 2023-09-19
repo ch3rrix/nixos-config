@@ -12,89 +12,94 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
     #alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     #alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    nixvim,
-    sddm-sugar-candy-nix,
-    #alejandra,
-    ...
-  }: let
-    system = "x86_64-linux";
-  in {
-    #formatter."${system}" = nixpkgs.legacyPackages."${system}".alejandra;
-    nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./modules/common.nix
-          ./modules/xserver.nix
-          ./modules/tablet.nix
-          ./modules/common.nix
-          ./modules/xserver.nix
-          ./modules/home-manager.nix
-          ./modules/pipewire.nix
-          ./modules/fish.nix
-          ./modules/xdg.nix
-          ./modules/physlock.nix
-          ./modules/env-vars.nix
-          ./modules/fonts.nix
-          ./modules/adb.nix
-          ./modules/sddm-sugar-candy.nix
+  outputs =
+    { self
+    , nixpkgs
+    , home-manager
+    , nixvim
+    , sddm-sugar-candy-nix
+    , nix-colors
+    , #alejandra,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      #formatter."${system}" = nixpkgs.legacyPackages."${system}".alejandra;
+      nixosConfigurations = {
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs nix-colors; };
+          modules = [
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/tablet.nix
+            ./modules/common.nix
+            ./modules/home-manager.nix
+            ./modules/pipewire.nix
+            ./modules/fish.nix
+            ./modules/xdg.nix
+            ./modules/physlock.nix
+            ./modules/env-vars.nix
+            ./modules/fonts.nix
+            ./modules/adb.nix
+            ./modules/sddm-sugar-candy.nix
 
-          ./hosts/laptop.nix
-        ];
-      };
-      workplace = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./modules/common.nix
-          ./modules/xserver.nix
-          ./modules/home-manager.nix
-          ./modules/pipewire.nix
-          ./modules/fish.nix
-          ./modules/xdg.nix
-          ./modules/physlock.nix
-          ./modules/env-vars.nix
-          ./hosts/workplace.nix
-          ./modules/fonts.nix
-          ./modules/sddm-sugar-candy.nix
-          #{
-          #  environment.systemPackages = [alejandra.defaultPackage.${system}];
-          #}
+            ./hosts/laptop.nix
+          ];
+        };
+        workplace = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs nix-colors; };
+          modules = [
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/home-manager.nix
+            ./modules/pipewire.nix
+            ./modules/fish.nix
+            ./modules/xdg.nix
+            ./modules/physlock.nix
+            ./modules/env-vars.nix
+            ./hosts/workplace.nix
+            ./modules/fonts.nix
+            ./modules/sddm-sugar-candy.nix
+            ./modules/awesome.nix
+            #./modules/kde
+            #./modules/plasma.nix
 
-          ./hosts/workplace.nix
-        ];
-      };
 
-      xenia = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {inherit self inputs;};
-        modules = [
-          ./modules/common.nix
-          ./modules/xserver.nix
-          ./modules/home-manager.nix
-          ./modules/pipewire.nix
-          ./modules/fish.nix
-          ./modules/xdg.nix
-          ./modules/physlock.nix
-          ./modules/env-vars.nix
-          ./modules/fonts.nix
-          ./modules/adb.nix
-          ./modules/sddm-sugar-candy.nix
-          ./modules/tablet.nix
-          #./modules/opentabletdriver.nix
+	    ./modules/zram.nix
+            ./hosts/workplace.nix
+          ];
+        };
 
-          ./hosts/xenia.nix
-        ];
+        xenia = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit self inputs nix-colors; };
+          modules = [
+            ./modules/common.nix
+            ./modules/xserver.nix
+            ./modules/home-manager.nix
+            ./modules/pipewire.nix
+            ./modules/fish.nix
+            ./modules/xdg.nix
+            ./modules/physlock.nix
+            ./modules/env-vars.nix
+            ./modules/fonts.nix
+            ./modules/adb.nix
+            ./modules/sddm-sugar-candy.nix
+            ./modules/tablet.nix
+            #./modules/opentabletdriver.nix
+
+            ./hosts/xenia.nix
+          ];
+        };
       };
     };
-  };
 }
