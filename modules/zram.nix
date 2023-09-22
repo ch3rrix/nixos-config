@@ -8,5 +8,6 @@
 
   boot.kernel.sysctl = {
     "vm.swappiness" = 200;
+    "vm.vfs_cache_pressure" = 200;
   };
 }
