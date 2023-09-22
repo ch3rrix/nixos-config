@@ -17,18 +17,11 @@
     #alejandra.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , nixvim
-    , sddm-sugar-candy-nix
-    , nix-colors
-    , #alejandra,
-      ...
-    }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, sddm-sugar-candy-nix, nix-colors, ... }@inputs:
+    with inputs.self.lib;
     let
       system = "x86_64-linux";
+      dir = with lib; (x: y: map (path: x + lib.substring (lib.stringLength (toString ./.)) (-1) (toString path)) y);
     in
     {
       #formatter."${system}" = nixpkgs.legacyPackages."${system}".alejandra;
@@ -40,7 +33,6 @@
             ./modules/common.nix
             ./modules/xserver.nix
             ./modules/tablet.nix
-            ./modules/common.nix
             ./modules/home-manager.nix
             ./modules/pipewire.nix
             ./modules/fish.nix
@@ -71,6 +63,7 @@
             ./modules/sddm-sugar-candy.nix
             ./modules/awesome.nix
             ./modules/sway.nix
+	    ./modules/adb.nix
             #./modules/kde
             #./modules/plasma.nix
 

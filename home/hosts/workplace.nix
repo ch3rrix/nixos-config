@@ -4,9 +4,9 @@
 }:
 
 let
-  concat = with lib; (x: y: map (path: x + lib.substring (lib.stringLength (toString ./.)) (-1) (toString path)) y);
+  dir = with lib; (x: y: map (path: x + lib.substring (lib.stringLength (toString ./.)) (-1) (toString path)) y);
 
-  programs = concat ../programs [
+  programs = dir ../programs [
     /* Imagine we're in /etc/nixos/home/programs */
     ./.
     ./nixvim
@@ -19,7 +19,7 @@ let
     ./fish
   ];
 
-  configs = concat ../conf [
+  configs = dir ../conf [
     /* Imagine we're in /etc/nixos/home/conf */
     ./fonts
     ./themes/catppuccin
