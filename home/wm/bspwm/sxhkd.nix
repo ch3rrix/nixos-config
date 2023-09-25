@@ -31,7 +31,7 @@
       "super + shift + s" = "bspc node @^1:focused:/ -s @^2:focused:/ || bspc node @^1:focused:/ -d ^2:focused || bspc node @^2:focused:/ -d ^1:focused";
       "Print; r" = "screenrecord";
       "Print; {f,a}" = "screenshot -{full,area}";
-      "super + e" = "emacs";
+      "super + e" = "emacsclient -c -a emacs";
     };
     extraOptions = ["-m -1"];
   };
