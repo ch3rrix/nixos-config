@@ -34,6 +34,7 @@
     };
   };
 
+  systemd.units."dev-disk-by\\x2ddiskseq-1\\x2dpart3.swap".enable = false;
   swapDevices = lib.mkForce [ /*{device = "/dev/disk/by-label/SWAP";}*/ ];
 
   hardware.cpu.intel.updateMicrocode =

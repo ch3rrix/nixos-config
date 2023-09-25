@@ -31,6 +31,7 @@
           specialArgs = { inherit self inputs nix-colors; };
           modules = [
             ./modules/common.nix
+            ./modules/user.nix
             ./modules/xserver.nix
             ./modules/tablet.nix
             ./modules/home-manager.nix
@@ -51,6 +52,7 @@
           specialArgs = { inherit self inputs nix-colors; };
           modules = [
             ./modules/common.nix
+            ./modules/user.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix
             ./modules/pipewire.nix
@@ -63,7 +65,7 @@
             ./modules/sddm-sugar-candy.nix
             ./modules/awesome.nix
             ./modules/sway.nix
-	    ./modules/adb.nix
+            ./modules/adb.nix
             #./modules/kde
             #./modules/plasma.nix
 
@@ -78,6 +80,7 @@
           specialArgs = { inherit self inputs nix-colors; };
           modules = [
             ./modules/common.nix
+            ./modules/user.nix
             ./modules/xserver.nix
             ./modules/home-manager.nix
             ./modules/pipewire.nix
