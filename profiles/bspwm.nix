@@ -1,10 +1,13 @@
 {
   imports = [
-    ../modules/common.nix
-    ../modules/xserver.nix
-    ../modules/xdg.nix
+    ../modules/bspwm.nix
     ../modules/physlock.nix
-
-    ./hosts/laptop.nix
+    ../modules/sddm-sugar-candy.nix
+    ../modules/sddm.nix
+    ../modules/xdg.nix
+    ../modules/xserver.nix
   ];
+
+  displayManager.defaultSession = "none+bspwm";
+  services.xserver.windowManager.bspwm.enable = true;
 }

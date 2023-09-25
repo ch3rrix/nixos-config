@@ -1,8 +1,4 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
   services.physlock = {
     enable = true;
     allowAnyUser = true;

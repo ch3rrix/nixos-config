@@ -1,0 +1,7 @@
+modules = forAllHosts [
+  ./common.nix
+  ./env-vars.nix
+  ./fish.nix
+  ./home-manager.nix
+  ./user.nix
+];
