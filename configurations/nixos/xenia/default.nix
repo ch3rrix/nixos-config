@@ -12,6 +12,7 @@ in
     ./configuration.nix
     (self + /modules/nixos/linux/gui/gnome.nix)
     (self + /modules/nixos/linux/gui/desktopish/fonts.nix)
+    (self + /modules/nixos/linux/v2raya.nix)
   ];
 
   services.openssh.enable = false;
