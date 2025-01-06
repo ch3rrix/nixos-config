@@ -105,36 +105,6 @@
     libinput.enable = true;
   };
 
-  # users.users.ch3rrix = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #     alacritty
-  #     firefox
-  #   ];
-  # };
-
-  # environment = {
-  #   systemPackages = with pkgs; [
-  #     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #     git
-  #     wget
-  #   ];
-  #   variables = {
-  #     EDITOR = "vim";
-  #   };
-  # };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # system.copySystemConfiguration = true;
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
