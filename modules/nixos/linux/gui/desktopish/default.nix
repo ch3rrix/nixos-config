@@ -1,18 +1,18 @@
 { pkgs, ... }: {
   imports = [
     # Isolated features
-    ./hidpi.nix
-    ./swap-caps-ctrl.nix
-    ./light-terminal.nix
-    ./screencapture.nix
-    ./fonts.nix
-    ./touchpad-trackpoint.nix
     ./autolock.nix
-    ./redshift.nix
+    ./fonts.nix
     ./gnome-keyring.nix
     ./guiapps.nix
-    ./polybar.nix
+    ./hidpi.nix
     ./hotplug.nix
+    ./light-terminal.nix
+    ./polybar.nix
+    ./redshift.nix
+    ./screencapture.nix
+    ./swap-caps-ctrl.nix
+    ./touchpad-trackpoint.nix
 
     # WMish things
     ./xmonad

@@ -26,9 +26,6 @@
     # Devshell
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.flake = false;
-
-    ghostty.url = "github:ghostty-org/ghostty";
-    ghostty-hm.url = "github:clo4/ghostty-hm-module";
   };
 
   outputs = inputs@{ self, ... }:
