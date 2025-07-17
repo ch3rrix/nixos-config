@@ -20,20 +20,30 @@
 
     settings = {
       trusted-users = ["@wheel"];
-      trusted-substituters = ["https://hydra.nixos.org/"];
+      substituters = [
+        "https://hyprland.cachix.org"
+      ]; # substituters
+      trusted-substituters = [
+        "https://hydra.nixos.org/"
+        "https://hyprland.cachix.org"
+      ]; # trusted-substituters
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
       auto-optimise-store = true;
       allowed-users = ["@wheel"];
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     }; # settings
     registry = {
       nixpkgs.to = {
         type = "path";
         path = pkgs.path;
-        narHash =
-          builtins.readFile
-          (pkgs.runCommandLocal "get-nixpkgs-hash"
-            {nativeBuildInputs = [pkgs.nix];}
-            "nix-hash --type sha256 --sri ${pkgs.path} > $out");
+        narHash = builtins.readFile (
+          pkgs.runCommandLocal "get-nixpkgs-hash" {
+            nativeBuildInputs = [pkgs.nix];
+          } "nix-hash --type sha256 --sri ${pkgs.path} > $out"
+        );
       }; # nixpkgs.to
     }; # registry
   }; # nix

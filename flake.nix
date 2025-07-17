@@ -17,6 +17,8 @@
       url = "github:kamadorueda/alejandra/4.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     }; # alejandra
+    hyprland.url = "github:hyprwm/Hyprland";
+    catppuccin.url = "github:catppuccin/nix";
   }; # inputs
 
   outputs = inputs @ {
@@ -38,6 +40,8 @@
             environment.systemPackages = [inputs.alejandra.defaultPackage.${system}];
           }
 
+          inputs.catppuccin.nixosModules.catppuccin
+
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -45,6 +49,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
+              backupFileExtension = "hm-backup";
             };
           } # home-manager
         ]; # modules

@@ -46,7 +46,13 @@
     extraGroups = ["networkmanager" "wheel" "video"];
   }; # users.users.ch3rrix
 
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware = {
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  }; # hardware
 
   programs = {
     mtr.enable = true;

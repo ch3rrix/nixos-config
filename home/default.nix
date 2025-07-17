@@ -1,7 +1,12 @@
 {...}: {
   imports = [
+    ./catppuccin.nix
     ./git.nix
     ./packages.nix
+    ./obs-studio.nix
+    ./hyprland.nix
+    ./kitty.nix
+    ./neovim.nix
   ]; # imports
 
   home = {
