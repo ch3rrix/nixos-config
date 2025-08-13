@@ -11,4 +11,10 @@
   home = {
     stateVersion = "25.05";
   }; # home
+
+  environment.variables = {
+  	EDITOR = "nvim";
+	VISUAL = "nvim";
+	SUDO_EDITOR = "nvim";
+  };
 }
