@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./catppuccin.nix
     ./git.nix
     ./packages.nix
     ./obs-studio.nix
