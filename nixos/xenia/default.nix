@@ -30,7 +30,7 @@
     "/boot" = {
       device = "/dev/disk/by-uuid/2DEE-E984";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = ["fmask=0077" "dmask=0077"];
     }; # "/boot"
   }; # fileSystems
 
