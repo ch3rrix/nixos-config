@@ -6,6 +6,7 @@
     ./hyprland.nix
     ./kitty.nix
     ./neovim.nix
+    ./v2raya.nix
   ]; # imports
 
   home = {
