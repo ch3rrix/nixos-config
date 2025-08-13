@@ -10,5 +10,6 @@
     ./locale.nix
     ./plymouth.nix
     ./steam.nix
+    ./v2raya.nix
   ]; # imports
 }
