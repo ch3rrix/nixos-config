@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.fish.enable = true;
 
   users.users.ch3rrix.shell = pkgs.fish;

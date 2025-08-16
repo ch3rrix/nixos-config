@@ -1,56 +1,57 @@
 {
-  description = "ch3rrix's NixOS configuration";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    }; #flake-parts
+
+    ez-configs = {
+      url = "github:ehllie/ez-configs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    }; #ez-configs
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     }; # home-manager
-    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    ez-configs = {
-      url = "github:ehllie/ez-configs";
-      inputs.flake-parts.follows = "flake-parts";
-    }; # ez-configs
-    alejandra = {
-      url = "github:kamadorueda/alejandra/4.0.0";
+
+    nh = {
+      url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; # alejandra
-    hyprland.url = "github:hyprwm/Hyprland";
+    }; # nh
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
+    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
+
   }; # inputs
 
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    ...
-  }: {
-    nixosConfigurations = {
-      xenia = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./nixos/xenia
-          ./modules/xenia.nix
-          inputs.nixos-facter-modules.nixosModules.facter
-          {config.facter.reportPath = ./facter.json;}
+  outputs = inputs@{ flake-parts, ez-configs, home-manager, nixvim, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        ez-configs.flakeModule
+        home-manager.flakeModules.home-manager
+      ];
 
-          {
-            environment.systemPackages = [inputs.alejandra.defaultPackage.${system}];
-          }
+      systems = [ "x86_64-linux" ];
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              users.ch3rrix = ./home;
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = {inherit inputs;};
-              backupFileExtension = "hm-backup";
-            };
-          } # home-manager
-        ]; # modules
-      }; # xenia
-    }; # nixosConfigurations
-  }; # outputs
+      perSystem = { pkgs, ... }: {
+        formatter = pkgs.nixpkgs-fmt;
+      };
+
+      ezConfigs = {
+        root = ./.;
+        globalArgs = { inherit inputs; };
+      };
+    }; # outputs, flake-parts.lib.mkFlake
 }

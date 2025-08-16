@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # Social
     ayugram-desktop
@@ -28,7 +28,6 @@
   programs = {
     firefox = {
       enable = true;
-      profiles.default.extensions.force = true;
     }; # firefox
   }; # programs
 }

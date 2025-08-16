@@ -1,5 +1,5 @@
-{lib, ...}: {
-  swapDevices = lib.mkForce [];
+{ lib, ... }: {
+  swapDevices = lib.mkForce [ ];
   zramSwap = {
     enable = true;
     algorithm = "zstd";

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services = {
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
@@ -15,5 +15,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.kate
     kdePackages.sddm-kcm
+    kdePackages.kdeconnect-kde
   ]; # environment.systemPackages
+  programs.kdeconnect.enable = true;
 }

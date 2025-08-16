@@ -1,26 +1,36 @@
+{ config, inputs, lib, modulesPath, pkgs, ezModules, ... }:
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   imports = [
-  ]; # imports
+    ezModules.adb
+    ezModules.comma
+    ezModules.fish
+    ezModules.fonts
+    # ezModules.gui-hyprland
+    ezModules.nh
+    ezModules.gui-plasma
+    ezModules.neovim
+    ezModules.pipewire
+    ezModules.plymouth
+    ezModules.steam
+    ezModules.v2raya
+    ezModules.zram
+    (modulesPath + "/installer/scan/not-detected.nix")
+    inputs.nixos-facter-modules.nixosModules.facter
+    { config.facter.reportPath = ./xenia.json; }
+
+  ];
 
   boot = {
     initrd = {
-      availableKernelModules = ["nvme" "xhci_pci_renesas" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci"];
-      kernelModules = [];
+      availableKernelModules = [ "nvme" "xhci_pci_renesas" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+      kernelModules = [ ];
     }; # initrd
 
-    kernelModules = ["kvm-amd"];
-    extraModulePackages = [];
+    kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ ];
 
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_latest;
   }; # boot
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/c9cee5db-b0fd-486c-9891-ae61132be6d0";
@@ -30,20 +40,18 @@
     "/boot" = {
       device = "/dev/disk/by-uuid/2DEE-E984";
       fsType = "vfat";
-      options = ["fmask=0077" "dmask=0077"];
+      options = [ "fmask=0077" "dmask=0077" ];
     }; # "/boot"
   }; # fileSystems
 
   networking = {
     hostName = "xenia";
-    networkmanager.enable = true;
-    useDHCP = lib.mkDefault true;
   }; # networking
 
   users.users.ch3rrix = {
     isNormalUser = true;
     description = "Ruslan Rakshinsky";
-    extraGroups = ["networkmanager" "wheel" "video"];
+    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" ];
   }; # users.users.ch3rrix
 
   hardware = {
@@ -62,5 +70,5 @@
     }; # gnupg.agent
   }; # programs
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }

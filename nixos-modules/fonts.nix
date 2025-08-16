@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fonts = {
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["JetBrainsMono Nerd Font"];
-        emoji = ["Noto Color Emoji"];
+        monospace = [ "JetBrainsMono Nerd Font" ];
+        emoji = [ "Noto Color Emoji" ];
       }; # defaultFonts
     }; # fontconfig
 
