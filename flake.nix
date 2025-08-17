@@ -5,7 +5,7 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
-    }; #flake-parts
+    }; # flake-parts
 
     ez-configs = {
       url = "github:ehllie/ez-configs";
@@ -13,7 +13,7 @@
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
       };
-    }; #ez-configs
+    }; # ez-configs
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,16 +27,20 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
   }; # inputs
 
-  outputs = inputs@{ flake-parts, ez-configs, home-manager, nixvim, ... }:
+  outputs =
+    inputs@{ flake-parts
+    , ez-configs
+    , home-manager
+    , nixvim
+    , ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         ez-configs.flakeModule
@@ -45,9 +49,11 @@
 
       systems = [ "x86_64-linux" ];
 
-      perSystem = { pkgs, ... }: {
-        formatter = pkgs.nixpkgs-fmt;
-      };
+      perSystem =
+        { pkgs, ... }:
+        {
+          formatter = pkgs.nixpkgs-fmt;
+        };
 
       ezConfigs = {
         root = ./.;

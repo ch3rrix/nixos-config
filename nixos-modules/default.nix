@@ -1,8 +1,8 @@
-{ inputs, lib, modulesPath, pkgs, ... }:
-let
-  inherit (lib) attrValues;
-
-in
+{ inputs
+, lib
+, pkgs
+, ...
+}:
 {
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -26,7 +26,9 @@ in
       substituters = [ "https://nix-community.cachix.org" ];
       trusted-substituters = [ "https://nix-community.cachix.org" ];
       extra-substituters = [ "https://nix-community.cachix.org" ];
-      extra-trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
       auto-optimise-store = true;
       allowed-users = [ "@wheel" ];
       experimental-features = [
@@ -60,7 +62,12 @@ in
   users.users.ch3rrix = {
     isNormalUser = true;
     description = "Ruslan Rakshinsky";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "adbusers"
+    ];
   }; # users.users.ch3rrix
 
   system = {

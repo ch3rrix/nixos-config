@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   swapDevices = lib.mkForce [ ];
   zramSwap = {
     enable = true;

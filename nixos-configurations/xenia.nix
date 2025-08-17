@@ -1,4 +1,11 @@
-{ config, inputs, lib, modulesPath, pkgs, ezModules, ... }:
+{ config
+, inputs
+, lib
+, modulesPath
+, pkgs
+, ezModules
+, ...
+}:
 {
   imports = [
     ezModules.adb
@@ -22,7 +29,14 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci_renesas" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci_renesas"
+        "xhci_pci"
+        "usb_storage"
+        "sd_mod"
+        "sdhci_pci"
+      ];
       kernelModules = [ ];
     }; # initrd
 
@@ -40,7 +54,10 @@
     "/boot" = {
       device = "/dev/disk/by-uuid/2DEE-E984";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
+      options = [
+        "fmask=0077"
+        "dmask=0077"
+      ];
     }; # "/boot"
   }; # fileSystems
 
@@ -51,7 +68,12 @@
   users.users.ch3rrix = {
     isNormalUser = true;
     description = "Ruslan Rakshinsky";
-    extraGroups = [ "networkmanager" "wheel" "video" "adbusers" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "adbusers"
+    ];
   }; # users.users.ch3rrix
 
   hardware = {
