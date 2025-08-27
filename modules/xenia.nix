@@ -14,4 +14,10 @@
     ./v2raya.nix
     ./zram.nix
   ]; # imports
+
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    SUDO_EDITOR = "nvim";
+  };
 }
