@@ -21,5 +21,6 @@
     ./neovim.nix
     ./obs-studio.nix
     ./packages.nix
+    ./stylix.nix
   ]; # imports
 }

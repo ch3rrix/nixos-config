@@ -77,7 +77,6 @@
   ];
 
   programs = {
-    firefox.enable = true;
     mtr.enable = true;
 
     gnupg.agent = {

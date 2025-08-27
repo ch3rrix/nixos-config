@@ -22,49 +22,59 @@
     }; # nvf
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; # stylix
   }; # inputs
 
-  outputs = inputs: let
-    specialArgs = {
-      inherit inputs;
-    }; # specialArgs
-    system = "x86_64-linux";
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    }; # pkgs
-    lib = inputs.nixpkgs.lib;
-  in {
-    formatter.${system} = pkgs.alejandra;
-    # In flake.nix
-    devShells.${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        nil
-        alejandra
-        statix
-        deadnix
-      ]; # buildInputs
-    }; # devShells
-    nixosConfigurations = {
-      xenia = lib.nixosSystem {
-        inherit system specialArgs;
-        modules = [
-          ./nixos/xenia
+  outputs =
+    inputs:
+    let
+      specialArgs = {
+        inherit inputs;
+      }; # specialArgs
+      system = "x86_64-linux";
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      }; # pkgs
+      lib = inputs.nixpkgs.lib;
+    in
+    {
+      formatter.${system} = pkgs.alejandra;
+      # In flake.nix
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          nil
+          alejandra
+          statix
+          deadnix
+        ]; # buildInputs
+      }; # devShells
+      nixosConfigurations = {
+        xenia = lib.nixosSystem {
+          inherit system specialArgs;
+          modules = [
+            ./nixos/xenia
 
-          inputs.nixos-facter-modules.nixosModules.facter
-          {config.facter.reportPath = ./nixos/xenia/facter.json;}
+            inputs.nixos-facter-modules.nixosModules.facter
+            { config.facter.reportPath = ./nixos/xenia/facter.json; }
 
-          inputs.nix-index-database.nixosModules.nix-index
+            inputs.nix-index-database.nixosModules.nix-index
+            inputs.stylix.nixosModules.stylix
 
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ch3rrix = ./home;
-            home-manager.extraSpecialArgs = specialArgs;
-          } # home-manager
-        ]; # modules
-      }; # xenia
-    }; # nixosConfigurations
-  }; # outputs
+            inputs.home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.ch3rrix = ./home;
+              home-manager.backupFileExtension = ".hm-bk";
+              home-manager.extraSpecialArgs = specialArgs;
+            } # home-manager
+          ]; # modules
+        }; # xenia
+      }; # nixosConfigurations
+    }; # outputs
 }
