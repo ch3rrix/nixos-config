@@ -16,13 +16,8 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     autoEnable = true;
     targets = {
-      qt = {
-        platform = "qtct";
-      };
       firefox = {
-        enable = true;
-        profileNames = [ "default" ];
-        colorTheme.enable = true;
+        enable = false;
       };
     };
   }; # stylix
