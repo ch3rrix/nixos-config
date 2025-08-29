@@ -18,5 +18,6 @@
     pkgs.slurp
     pkgs.wl-clipboard
     pkgs.waybar
+    pkgs.hyprshot
   ]; # environment.systemPackages
 }
