@@ -13,7 +13,7 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     settings = {
       # Monitor configuration
-      monitor = ",preferred,auto,1";
+      monitor = "eDP-1,preferred,0x0,1";
 
       # Environment variables
       env = [
