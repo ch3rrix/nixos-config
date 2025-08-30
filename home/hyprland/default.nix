@@ -13,7 +13,7 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     settings = {
       # Monitor configuration
-      monitor = ",preferred,auto,1";
+      monitor = "eDP-1,preferred,0x0,1";
 
       # Environment variables
       env = [
@@ -135,10 +135,12 @@
         scroll_factor = 0.33;
       };
 
-      # Gestures
-      gestures = {
-        workspace_swipe = true;
-      };
+      # This one is deprecated since commit 81bf4eccba449bfe2b6adfb51260108aec710d4f
+      #
+      # gestures = {
+      #   workspace_swipe = true;
+      # };
+      gesture = ["3, horizontal, workspace"];
 
       # Device-specific settings
       device = [
