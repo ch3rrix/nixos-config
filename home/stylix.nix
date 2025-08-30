@@ -10,15 +10,21 @@
 
   dconf.settings."org/gnome/desktop/interface".color-scheme = lib.mkForce "prefer-dark";
   gtk.gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
- 
+
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/valua.yaml";
     autoEnable = true;
     targets = {
       firefox = {
         enable = false;
       };
-    };
+    }; # targets
+    fonts = {
+      serif = {
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        name = "SFProDisplay Nerd Font";
+      }; # serif
+    }; # fonts
   }; # stylix
 }

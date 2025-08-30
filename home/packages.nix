@@ -9,6 +9,7 @@
 
     # Development
     vscode
+    code-cursor
     gh
     quickshell
     kdePackages.qtdeclarative

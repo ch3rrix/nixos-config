@@ -17,6 +17,20 @@
         withRuby = true;
         withNodeJs = true;
 
+        lsp = {
+          enable = true;
+          trouble = {
+            enable = true;
+          }; # lsp.trouble
+          servers = {
+            "qml" = {
+              enable = true;
+              filetypes = ["qml"];
+              cmd = ["qmlls"];
+            }; # qml
+          }; # lsp.servers
+        }; # lsp
+
         languages = {
           nix = {
             enable = true;

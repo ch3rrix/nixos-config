@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./waybar.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -206,6 +209,14 @@
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, J, movewindow, d"
 
+      ];
+
+      # Mouse bindings
+      bindm = [
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
+      ];
+      binde = [
         # Window resizing
         "$mainMod ALT, H, resizeactive, -20 0"
         "$mainMod ALT, L, resizeactive, 20 0"
@@ -217,13 +228,7 @@
         "$mainMod CONTROL, L, moveactive, 10 0"
         "$mainMod CONTROL, K, moveactive, 0 -10"
         "$mainMod CONTROL, J, moveactive, 0 10"
-      ];
-
-      # Mouse bindings
-      bindm = [
-        "$mainMod, mouse:272, movewindow"
-        "$mainMod, mouse:273, resizewindow"
-      ];
+      ]; # binde
 
       # Volume and brightness controls
       bindel = [

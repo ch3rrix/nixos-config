@@ -16,7 +16,8 @@
   }; # programs.git
 
   imports = [
-    ./hyprland.nix
+    ./hyprland
+    ./emacs
     ./kitty.nix
     ./neovim.nix
     ./obs-studio.nix
