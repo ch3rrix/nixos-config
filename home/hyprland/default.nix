@@ -33,8 +33,8 @@
 
       # Decoration settings
       decoration = {
-        rounding = 18;
-        rounding_power = 1;
+        rounding = 13;
+        rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
@@ -135,10 +135,12 @@
         scroll_factor = 0.33;
       };
 
-      # Gestures
-      gestures = {
-        workspace_swipe = true;
-      };
+      # This one is deprecated since commit 81bf4eccba449bfe2b6adfb51260108aec710d4f
+      #
+      # gestures = {
+      #   workspace_swipe = true;
+      # };
+      gesture = ["3, horizontal, workspace"];
 
       # Device-specific settings
       device = [
