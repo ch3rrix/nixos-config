@@ -208,7 +208,6 @@
         "$mainMod SHIFT, L, movewindow, r"
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, J, movewindow, d"
-
       ];
 
       # Mouse bindings

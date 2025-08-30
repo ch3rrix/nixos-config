@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -8,10 +7,10 @@
         layer = "top";
         position = "top";
         height = 30;
-        output = [ "eDP-1" ];
-        modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "hyprland/language" "network" "pulseaudio" "battery" "backlight" "tray" ];
+        output = ["eDP-1"];
+        modules-left = ["hyprland/workspaces" "hyprland/submap"];
+        modules-center = ["clock"];
+        modules-right = ["hyprland/language" "network" "pulseaudio" "battery" "backlight" "tray"];
 
         "hyprland/workspaces" = {
           format = "{name}: {icon}";
@@ -67,7 +66,6 @@
           # format-full = "";
           format-icons = ["" "" "" "" ""];
         }; # "battery"
-
       }; # bar
     }; # settings
     style = ''
@@ -79,13 +77,13 @@
         padding-left: 0px;
         padding-bottom: 0px;
       }
-      
+
       #waybar {
         background: transparent;
         margin: 0px;
        /* font-weight: 500; */
       }
-      
+
       #workspaces {
         padding: 0.3rem 0.7rem;
         margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
@@ -95,13 +93,13 @@
         /* Transition for background-color and color only */
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
       }
-      
+
       #workspaces {
         padding: 2px;
         margin-left: 7px; /* Margin from the far left edge */
         margin-right: 5px; /* Spacing after the workspaces module */
       }
-      
+
       #workspaces button {
         border-radius: 5px; /* Workspaces buttons are always rounded */
         padding: 0.3rem 0.6rem;
@@ -110,7 +108,7 @@
         border: none;
         outline: none;
       }
-      
+
       #clock {
         padding: 0.3rem 0.7rem;
         margin: 5px 0px;
@@ -119,7 +117,7 @@
         border: none;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
       }
-      
+
       #bluetooth,
       #pulseaudio,
       #backlight,
@@ -127,20 +125,20 @@
       #custom-lock,
       #battery {
         padding: 0.3rem 0.7rem;
-        margin: 5px 0px; 
+        margin: 5px 0px;
         border-radius: 0;
         box-shadow: none;
         min-width: 0;
         border: none;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
       }
-      
+
       #bluetooth {
-        margin-left: 0px; 
+        margin-left: 0px;
         border-top-left-radius: 6px;
         border-bottom-left-radius: 6px;
       }
-      
+
       #battery {
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
@@ -149,7 +147,7 @@
       #tray {
         margin-right: 7px;
       }
-      
+
       #bluetooth {
         color: #888888;
         font-size: 16px;
