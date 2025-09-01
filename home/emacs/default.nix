@@ -7,6 +7,10 @@
       epkgs.magit
       epkgs.nix-mode
       epkgs.nixos-options
+      epkgs.company
+      epkgs.lsp-mode
+      epkgs.which-key
+      epkgs.vertico
     ]; # extraPackages
   }; # programs.emacs
 

@@ -16,10 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     }; # nix-index-database
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; # nvf
+    }; # nixvim
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -35,15 +35,17 @@
   }; # inputs
 
   outputs = inputs: let
+    inherit (inputs.nixpkgs) lib;
+    system = "x86_64-linux";
+
     specialArgs = {
       inherit inputs;
     }; # specialArgs
-    system = "x86_64-linux";
+
     pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
     }; # pkgs
-    lib = inputs.nixpkgs.lib;
   in {
     formatter.${system} = pkgs.alejandra;
     # In flake.nix
@@ -69,12 +71,14 @@
 
           inputs.home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ch3rrix = ./home;
-            home-manager.backupFileExtension = ".hm-bk";
-            home-manager.extraSpecialArgs = specialArgs;
-          } # home-manager
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.ch3rrix = ./home;
+              backupFileExtension = ".hm-bk";
+              extraSpecialArgs = specialArgs;
+            }; # home-manager
+          }
         ]; # modules
       }; # xenia
     }; # nixosConfigurations

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # Social
     ayugram-desktop
@@ -22,9 +18,10 @@
     unzip
     ripgrep
     fzf
+    killall
+    htop-vim
 
     # Hyprland utilities
-    wofi
     playerctl
 
     # Graphics/Video
@@ -37,6 +34,9 @@
   ]; # home.packages
 
   programs = {
+    btop.enable = true;
+    yazi.enable = true;
+
     firefox = {
       enable = true;
       profiles = {

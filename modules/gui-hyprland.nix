@@ -3,6 +3,14 @@
   pkgs,
   ...
 }: {
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --cmd 'uwsm start default'";
+      }; # default session
+    }; # settings
+  }; # services.greetd
   programs.hyprland = {
     enable = true;
     # set the flake package

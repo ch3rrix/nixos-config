@@ -13,7 +13,9 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/valua.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/valua.yaml";
+    image = ./hyprland/wallpaper.png;
+    polarity = "dark";
     autoEnable = true;
     targets = {
       firefox = {

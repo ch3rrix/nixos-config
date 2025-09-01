@@ -19,7 +19,7 @@
     ./hyprland
     ./emacs
     ./kitty.nix
-    ./neovim.nix
+    ./nixvim.nix
     ./obs-studio.nix
     ./packages.nix
     ./stylix.nix

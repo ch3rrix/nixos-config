@@ -23,8 +23,8 @@
 
       # General settings
       general = {
-        gaps_in = 10;
-        gaps_out = 10;
+        gaps_in = 6;
+        gaps_out = 6;
         border_size = 2;
         resize_on_border = false;
         allow_tearing = false;
@@ -113,10 +113,6 @@
       };
 
       # Misc settings
-      misc = {
-        force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
-      };
 
       # Input settings
       input = {
@@ -268,5 +264,16 @@
     wofi = {
       enable = true;
     }; # wofi
+
+    fuzzel = {
+      enable = true;
+      package = pkgs.fuzzel;
+      settings = {
+        main = {
+          terminal = "${pkgs.kitty}/bin/kitty";
+          layer = "overlay";
+        }; # fuzzel.settings.main
+      }; # fuzzel.settings
+    }; # fuzzel
   }; # programs
 }

@@ -5,7 +5,7 @@
     ./comma.nix
     ./fish.nix
     ./fonts.nix
-    ./gui-plasma.nix
+    # ./gui-plasma.nix
     ./gui-hyprland.nix
     ./nh.nix
     ./pipewire.nix

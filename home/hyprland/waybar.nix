@@ -6,7 +6,7 @@
       bar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 24;
         output = ["eDP-1"];
         modules-left = ["hyprland/workspaces" "hyprland/submap"];
         modules-center = ["clock"];
@@ -72,7 +72,6 @@
       * {
         font-family: 'SFProDisplay Nerd Font', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
         font-size: 16px;
-        min-height: 0;
         padding-right: 0px;
         padding-left: 0px;
         padding-bottom: 0px;
