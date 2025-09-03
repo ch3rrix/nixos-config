@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./waybar.nix
+    ./quickshell.nix
   ];
   wayland.windowManager.hyprland = {
     enable = true;

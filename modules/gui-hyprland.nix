@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --cmd 'uwsm start default'";
+        command = "${pkgs.tuigreet}/bin/tuigreet -r --cmd 'uwsm start default'";
       }; # default session
     }; # settings
   }; # services.greetd

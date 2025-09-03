@@ -7,13 +7,13 @@
     vscode
     code-cursor
     gh
-    quickshell
     kdePackages.qtdeclarative
 
     # Games
     prismlauncher
 
     # Other utilities
+    p7zip-rar
     zip
     unzip
     ripgrep
@@ -23,6 +23,7 @@
 
     # Hyprland utilities
     playerctl
+    wl-clipboard
 
     # Graphics/Video
     vlc
