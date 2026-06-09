@@ -22,64 +22,23 @@
                   mountOptions = [ "umask=0077" ];
                 };
               };
-              luks = {
+              root = {
+                label = "root";
                 size = "100%";
-                label = "luks";
                 content = {
-                  type = "luks";
-                  name = "cryptroot";
-                  content = {
-                    type = "btrfs";
-                    extraArgs = [
-                      "-L"
-                      "nixos"
-                      "-f"
-                    ];
-                    subvolumes = {
-                      "/root" = {
-                        mountpoint = "/";
-                        mountOptions = [
-                          "subvol=root"
-                          "compress=zstd"
-                          "noatime"
-                        ];
-                      };
-                      "/nix" = {
-                        mountpoint = "/nix";
-                        mountOptions = [
-                          "subvol=nix"
-                          "compress=zstd"
-                          "noatime"
-                        ];
-                      };
-                      "/persist" = {
-                        mountpoint = "/persist";
-                        mountOptions = [
-                          "subvol=persist"
-                          "compress=zstd"
-                          "noatime"
-                        ];
-                      };
-                      "/swap" = {
-                        mountpoint = "/swap";
-                        mountOptions = [
-                          "subvol=swap"
-                          "noatime"
-                          "nodatacow"
-                          "compress=no"
-                        ];
-                        swap.swapfile.size = "34G";
-                      };
-                    };
-                  };
+                  type = "filesystem";
+                  format = "xfs";
+                  mountpoint = "/";
+                  mountOptions = [
+                    "defaults"
+                    "pquota"
+                  ];
                 };
               };
-            };
-          };
-        };
-      };
-    };
-
-    fileSystems."/persist".neededForBoot = true;
-  };
+            }; # partitions
+          }; # content
+        }; # main
+      }; # disk
+    }; # disko.devices
+  }; # flake.modules.nixos.host_xenia
 }

@@ -4,9 +4,5 @@
       enable = true;
       powerOnBoot = true;
     };
-
-    custom.persist.root.directories = [
-      "/var/lib/bluetooth"
-    ];
   };
 }

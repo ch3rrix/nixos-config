@@ -34,13 +34,5 @@
           MUSIC=Music
         '';
       };
-
-      custom.persist.user.directories = [
-        "Documents"
-        "Projects"
-        "Pictures"
-        "Videos"
-        "Music"
-      ];
     };
 }

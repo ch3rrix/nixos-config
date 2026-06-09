@@ -110,27 +110,6 @@
         "type": "github"
       }
     },
-    "monique": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1780222827,
-        "narHash": "sha256-PVhuzgHho0XlbT6krLAf3vBV0vDTbrIF4jGKiB5I/ac=",
-        "owner": "ToRvaLDz",
-        "repo": "monique",
-        "rev": "fd9c913a034a6dc35d2b8dbd6019336e721b0d64",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ToRvaLDz",
-        "repo": "monique",
-        "type": "github"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -247,7 +226,6 @@
         "flake-parts": "flake-parts",
         "hjem": "hjem",
         "impermanence": "impermanence",
-        "monique": "monique",
         "nix-index-database": "nix-index-database",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",

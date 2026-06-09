@@ -34,11 +34,7 @@
         };
       };
 
-      custom.keybinds."Mod+Shift+D".spawn = "discordptb";
-
-      custom.persist.user.directories = [
-        ".config/discordptb"
-        ".config/Equicord"
-      ];
+      # NOTE:: use in future
+      # custom.keybinds."Mod+Shift+D".spawn = "discordptb";
     };
 }

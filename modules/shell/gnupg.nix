@@ -4,9 +4,5 @@
       enable = true;
       enableSSHSupport = true;
     };
-
-    custom.persist.user.directories = [
-      ".gnupg"
-    ];
   };
 }

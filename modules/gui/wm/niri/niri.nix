@@ -48,13 +48,8 @@
 
       environment.systemPackages = [
         pkgs.xwayland-satellite
-	pkgs.fuzzel
+        pkgs.fuzzel
         (self.cursor.package pkgs)
       ];
-
-      custom.persist.user = {
-        files = [ ".config/niri/monitors.kdl" ];
-        directories = [ ".local/share/keyrings" ];
-      };
     };
 }

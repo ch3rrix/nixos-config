@@ -13,9 +13,5 @@
       };
 
       users.users.${user}.shell = pkgs.fish;
-
-      custom.persist.user.files = [
-        ".local/share/fish/fish_history"
-      ];
     };
 }

@@ -3,7 +3,7 @@
     keyboard = {
       xkb = {
         layout = "us,ru";
-	options = "grp:caps_toggle";
+        options = "grp:caps_toggle";
         model = "";
         rules = "";
         variant = "";
@@ -25,7 +25,7 @@
 
   binds = {
     "Mod+O".toggle-overview = _: { };
-    "Mod+D".spawn= "fuzzel";
+    "Mod+D".spawn = "fuzzel";
 
     "Mod+Q".close-window = _: { };
 

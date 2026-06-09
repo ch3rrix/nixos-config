@@ -5,9 +5,5 @@
       environment.systemPackages = [
         pkgs.obsidian
       ];
-
-      custom.persist.user.directories = [
-        ".config/obsidian"
-      ];
     };
 }
