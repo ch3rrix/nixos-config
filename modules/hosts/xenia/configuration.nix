@@ -1,12 +1,9 @@
-{ self, lib, ... }:
-let
-  facterPath = ./facter.json;
-  hasFacter = builtins.pathExists facterPath;
-in
+{
+  self,
+  ...
+}:
 {
   flake.nixosConfigurations = self.lib.mkNixos "xenia" { };
-
-  hardware.facter.reportPath = lib.mkIf hasFacter facterPath;
 
   flake.modules.nixos.host_xenia = {
     imports = with self.modules.nixos; [

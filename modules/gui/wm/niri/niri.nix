@@ -6,7 +6,7 @@
       packages.niri = inputs.wrappers.wrappers.niri.wrap {
         inherit pkgs;
         package = pkgs.niri;
-        settings = import ./_settings.nix;
+        settings = import ./_settings.nix { inherit self; };
         v2-settings = true;
       };
     };
@@ -49,6 +49,7 @@
       environment.systemPackages = [
         pkgs.xwayland-satellite
         pkgs.fuzzel
+        pkgs.brightnessctl
         (self.cursor.package pkgs)
       ];
     };

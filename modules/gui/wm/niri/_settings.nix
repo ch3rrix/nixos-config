@@ -1,3 +1,4 @@
+{self}:
 {
   input = {
     keyboard = {
@@ -15,8 +16,15 @@
     touchpad = {
       tap = _: { };
       natural-scroll = _: { };
+      dwt = _: { };
+      accel-profile = "flat";
+      disabled-on-external-mouse = _: { };
     };
     mouse = {
+      accel-speed = 0;
+      accel-profile = "flat";
+    };
+    trackpoint = {
       accel-speed = 0;
       accel-profile = "flat";
     };
@@ -27,12 +35,12 @@
     "Mod+O".toggle-overview = _: { };
     "Mod+D".spawn = "fuzzel";
 
-    "Mod+Q".close-window = _: { };
+    "Mod+Shift+Q".close-window = _: { };
 
-    "Mod+F".fullscreen-window = _: { };
+    "Mod+Shift+F".fullscreen-window = _: { };
 
     "Mod+R".switch-preset-column-width = _: { };
-    "Mod+Shift+R".maximize-column = _: { };
+    "Mod+F".maximize-column = _: { };
 
     "Mod+Plus".set-column-width = "+10%";
     "Mod+Minus".set-column-width = "-10%";
@@ -43,13 +51,18 @@
     "Mod+C".center-column = _: { };
     "Mod+Shift+C".center-visible-columns = _: { };
 
-    "Mod+V".toggle-window-floating = _: { };
-    "Mod+Shift+V".switch-focus-between-floating-and-tiling = _: { };
+    "Mod+Shift+V".toggle-window-floating = _: { };
+    "Mod+V".switch-focus-between-floating-and-tiling = _: { };
 
     "Mod+Up".focus-window-up = _: { };
     "Mod+Down".focus-window-down = _: { };
     "Mod+Right".focus-column-right = _: { };
     "Mod+Left".focus-column-left = _: { };
+
+    "Mod+K".focus-window-up = _: { };
+    "Mod+J".focus-window-down = _: { };
+    "Mod+L".focus-column-right = _: { };
+    "Mod+H".focus-column-left = _: { };
 
     "Mod+WheelScrollUp".focus-column-left = _: { };
     "Mod+WheelScrollDown".focus-column-right = _: { };
@@ -57,9 +70,23 @@
     "Mod+Shift+Down".move-window-down = _: { };
     "Mod+Shift+Right".move-column-right = _: { };
     "Mod+Shift+Left".move-column-left = _: { };
+    "Mod+Shift+K".move-window-up = _: { };
+    "Mod+Shift+J".move-window-down = _: { };
+    "Mod+Shift+L".move-column-right = _: { };
+    "Mod+Shift+H".move-column-left = _: { };
 
     "Mod+Shift+WheelScrollUp".move-column-left = _: { };
     "Mod+Shift+WheelScrollDown".move-column-right = _: { };
+
+    "Mod+U".focus-workspace-down = _: { };
+    "Mod+I".focus-workspace-up = _: { };
+    "Mod+Page_Down".focus-workspace-down = _: { };
+    "Mod+Page_Up".focus-workspace-up = _: { };
+
+    "Mod+Shift+U".move-column-to-workspace-down = _: { };
+    "Mod+Shift+I".move-column-to-workspace-up = _: { };
+    "Mod+Shift+Page_Down".move-column-to-workspace-down = _: { };
+    "Mod+Shift+Page_Up".move-column-to-workspace-up = _: { };
 
     "Mod+1".focus-workspace = 1;
     "Mod+2".focus-workspace = 2;
@@ -85,20 +112,42 @@
 
     "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
     "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+    "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+    "XF86AudioMicMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+    "XF86AudioPlay".spawn-sh = "playerctl play-pause";
+    "XF86AudioStop".spawn-sh = "playerctl stop";
+    "XF86AudioPrev".spawn-sh = "playerctl previous";
+    "XF86AudioNext".spawn-sh = "playerctl next";
+    "XF86MonBrightnessUp".spawn = [
+      "brightnessctl"
+      "--class=backlight"
+      "set"
+      "+10%"
+    ];
+    "XF86MonBrightnessDown".spawn = [
+      "brightnessctl"
+      "--class=backlight"
+      "set"
+      "10%-"
+    ];
   };
 
   prefer-no-csd = _: { };
 
   layout = {
-    gaps = 16;
+    gaps = 8;
     struts = {
       left = 0;
       right = 0;
       top = 0;
       bottom = 0;
     };
+
+    background-color = "transparent";
     focus-ring = {
-      off = _: { };
+      width = 2;
+      inactive-color = self.theme.base01;
+      active-color = self.theme.base0D;
     };
     border = {
       off = _: { };
@@ -111,14 +160,10 @@
           y = 2;
         };
       };
-      softness = 10;
-      spread = 1;
+      softness = 20;
+      spread = 3;
       draw-behind-window = false;
-      color = "#000000";
-      inactive-color = "#000000";
-    };
-    tab-indicator = {
-      off = _: { };
+      color = self.theme.base00;
     };
     default-column-width = {
       proportion = 0.500000;
@@ -130,20 +175,19 @@
       { proportion = 1.000000; }
     ];
     center-focused-column = "never";
+    always-center-single-column = _: { };
   };
 
   hotkey-overlay = {
     skip-at-startup = _: { };
   };
 
+  screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d/screenshot-%Y-%m-%d%H-%M-%S.png";
+
   window-rule = {
     open-fullscreen = false;
     clip-to-geometry = true;
-    opacity = 0.900000;
-    background-effect = {
-      blur = true;
-      xray = false;
-    };
+    geometry-corner-radius = 8;
   };
 
   layer-rules = [

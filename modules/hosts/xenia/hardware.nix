@@ -3,6 +3,8 @@
     { config, lib, ... }:
     let
       inherit (config.custom.constants) system;
+      facterPath = ./facter.json;
+      hasFacter = builtins.pathExists facterPath;
     in
     {
       boot = {
@@ -22,6 +24,7 @@
       nixpkgs.hostPlatform = lib.mkDefault system;
 
       hardware.enableAllFirmware = true;
+      hardware.facter.reportPath = lib.mkIf hasFacter facterPath;
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
     };
 }
