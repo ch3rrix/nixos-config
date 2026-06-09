@@ -1,18 +1,17 @@
 {
-  flake.modules.nixos.wm =
-    { config, ... }:
+  flake.modules.nixos.wm = { config, lib, pkgs, ... }:
     let
       inherit (config.custom.constants) user;
-    in
-    {
-      services.displayManager = {
-        autoLogin = {
-          enable = true;
-          inherit user;
-        };
-        ly = {
-          enable = true;
-          x11Support = false;
+      exe = lib.getExe pkgs.tuigreet;
+    in {
+      environment.systemPackages = [ pkgs.tuigreet ];
+      services.greetd = {
+        enable = true;
+        settings = {
+          default_session = {
+            command = "${exe} -r --cmd niri-session";
+            user = "greeter";
+          };
         };
       };
     };
