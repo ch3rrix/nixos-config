@@ -1,23 +1,21 @@
 { self, ... }:
 {
-  flake.nixosConfigurations = self.lib.mkNixos "zenbook" { };
+  flake.nixosConfigurations = self.lib.mkNixos "xenia" { };
 
-  flake.modules.nixos.host_zenbook = {
+  flake.modules.nixos.host_xenia = {
     imports = with self.modules.nixos; [
       wm_niri
 
-      programs_noctalia
+      games
       programs_nautilus
       programs_kitty
-      programs_zeditor
-      programs_qutebrowser
+      programs_firefox
+      programs_throne
       programs_thunderbird
       programs_obsidian
-      programs_discord
 
       hardware_battery
       hardware_bluetooth
-      hardware_keyboard
     ];
   };
 }

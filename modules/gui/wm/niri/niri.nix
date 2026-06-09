@@ -48,6 +48,7 @@
 
       environment.systemPackages = [
         pkgs.xwayland-satellite
+	pkgs.fuzzel
         (self.cursor.package pkgs)
       ];
 

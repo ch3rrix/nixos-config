@@ -4,11 +4,6 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    nix-cachyos-kernel = {
-      url = "github:xddxdd/nix-cachyos-kernel/release";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,11 +34,6 @@
 
     monique = {
       url = "github:ToRvaLDz/monique";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

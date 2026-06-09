@@ -4,7 +4,7 @@
     mkNixos =
       host:
       {
-        user ? "linus",
+        user ? "ch3rrix",
         system ? "x86_64-linux",
         extraConfig ? { },
       }:

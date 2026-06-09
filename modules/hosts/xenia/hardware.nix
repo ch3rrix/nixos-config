@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.host_zenbook =
+  flake.modules.nixos.host_xenia =
     { config, lib, ... }:
     let
       inherit (config.custom.constants) system;
@@ -15,13 +15,13 @@
           "sd_mod"
         ];
         initrd.kernelModules = [ ];
-        kernelModules = [ "kvm-intel" ];
+        kernelModules = [ "kvm-amd" ];
         extraModulePackages = [ ];
       };
 
       nixpkgs.hostPlatform = lib.mkDefault system;
 
       hardware.enableAllFirmware = true;
-      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
+      hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableAllFirmware;
     };
 }

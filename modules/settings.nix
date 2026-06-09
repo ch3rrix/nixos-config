@@ -9,23 +9,22 @@
 
       networking.hostName = host;
 
-      console.keyMap = "de";
+      console.keyMap = "us";
 
-      time.timeZone = "Europe/Zurich";
+      time.timeZone = "Europe/Moscow";
 
       i18n = {
-        defaultLocale = "en_GB.UTF-8";
-        extraLocales = [ "de_CH.UTF-8/UTF-8" ];
+        defaultLocale = "en_US.UTF-8";
         extraLocaleSettings = {
-          LC_ADDRESS = "de_CH.UTF-8";
-          LC_IDENTIFICATION = "de_CH.UTF-8";
-          LC_MEASUREMENT = "de_CH.UTF-8";
-          LC_MONETARY = "de_CH.UTF-8";
-          LC_NAME = "de_CH.UTF-8";
-          LC_NUMERIC = "de_CH.UTF-8";
-          LC_PAPER = "de_CH.UTF-8";
-          LC_TELEPHONE = "de_CH.UTF-8";
-          LC_TIME = "en_GB.UTF-8";
+          LC_ADDRESS = "en_US.UTF-8";
+          LC_IDENTIFICATION = "en_US.UTF-8";
+          LC_MEASUREMENT = "en_US.UTF-8";
+          LC_MONETARY = "en_US.UTF-8";
+          LC_NAME = "en_US.UTF-8";
+          LC_NUMERIC = "en_US.UTF-8";
+          LC_PAPER = "en_US.UTF-8";
+          LC_TELEPHONE = "en_US.UTF-8";
+          LC_TIME = "en_US.UTF-8";
         };
       };
 

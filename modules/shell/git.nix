@@ -26,7 +26,7 @@
         config = {
           advice.skippedCherryPicks = false;
           branch.sort = "-committerdate";
-          commit.gpgSign = true;
+          # commit.gpgSign = true;
           core.excludesFile = pkgs.writeText ".gitignore" (lib.concatStringsSep "\n" gitignores);
           core.fsmonitor = true;
           core.untrackedCache = true;
@@ -44,14 +44,13 @@
           rebase.autoStash = true;
           rebase.updateRefs = true;
           rerere.enabled = true;
-          tag.gpgSign = true;
+          # tag.gpgSign = true;
           url."git@github.com:".insteadOf = [
             "gh:"
             "https://github.com/"
           ];
-          user.name = "Linus Ammon";
-          user.email = "235536459+linusammon@users.noreply.github.com";
-          user.signingkey = "8B9FFAA2F0A5C411";
+          user.name = "Ruslan Rakshinsky";
+          user.email = "ch3rrix.dev@gmail.com";
         };
       };
 

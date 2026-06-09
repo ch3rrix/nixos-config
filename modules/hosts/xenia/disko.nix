@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.host_desktop = {
+  flake.modules.nixos.host_xenia = {
     imports = [ inputs.disko.nixosModules.disko ];
 
     disko.devices = {
@@ -68,7 +68,7 @@
                           "nodatacow"
                           "compress=no"
                         ];
-                        swap.swapfile.size = "98G";
+                        swap.swapfile.size = "34G";
                       };
                     };
                   };

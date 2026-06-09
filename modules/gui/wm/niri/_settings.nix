@@ -2,7 +2,8 @@
   input = {
     keyboard = {
       xkb = {
-        layout = "de";
+        layout = "us,ru";
+	options = "grp:caps_toggle";
         model = "";
         rules = "";
         variant = "";
@@ -24,6 +25,7 @@
 
   binds = {
     "Mod+O".toggle-overview = _: { };
+    "Mod+D".spawn= "fuzzel";
 
     "Mod+Q".close-window = _: { };
 
@@ -145,9 +147,5 @@
   };
 
   layer-rules = [
-    {
-      matches = [ { namespace = "^noctalia-backdrop"; } ];
-      place-within-backdrop = true;
-    }
   ];
 }
