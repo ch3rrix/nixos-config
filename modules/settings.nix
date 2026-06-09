@@ -2,9 +2,12 @@
   flake.modules.nixos.common = { config, ... }:
     let inherit (config.custom.constants) host;
     in {
-      networking.networkmanager.enable = true;
+      networking = {
+        networkmanager.enable = true;
+        hostName = host;
+      };
 
-      networking.hostName = host;
+      security.polkit.enable = true;
 
       console.keyMap = "us";
 

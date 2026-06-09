@@ -29,8 +29,10 @@
         enable = true;
         package = niri';
       };
+      systemd.user.services.niri.enableDefaultPath = false;
+      security.soteria.enable = true;
 
-      services.gnome.gcr-ssh-agent.enable = false;
+      services = { gnome.gcr-ssh-agent.enable = false; };
 
       environment.systemPackages = [
         pkgs.xwayland-satellite

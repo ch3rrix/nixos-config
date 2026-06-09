@@ -30,6 +30,15 @@
     focus-follows-mouse = _: { };
   };
 
+  outputs = {
+    "eDP-1" = {
+      mode = "1920x1080@60";
+      scale = 1;
+      transform = "normal";
+      focus-at-startup = _: { };
+    };
+  };
+
   binds = {
     "Mod+O".toggle-overview = _: { };
     "Mod+D".spawn = "fuzzel";
@@ -124,6 +133,7 @@
       [ "brightnessctl" "--class=backlight" "set" "+10%" ];
     "XF86MonBrightnessDown".spawn =
       [ "brightnessctl" "--class=backlight" "set" "10%-" ];
+    "Print".screenshot = _: { };
   };
 
   prefer-no-csd = _: { };
