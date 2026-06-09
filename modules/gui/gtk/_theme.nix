@@ -1,5 +1,4 @@
-{ self }:
-''
+{ self }: ''
   @define-color accent_color ${self.theme.base0D};
   @define-color accent_bg_color ${self.theme.base0D};
   @define-color accent_fg_color ${self.theme.base00};

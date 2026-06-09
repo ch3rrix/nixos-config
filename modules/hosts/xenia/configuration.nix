@@ -1,8 +1,4 @@
-{
-  self,
-  ...
-}:
-{
+{ self, ... }: {
   flake.nixosConfigurations = self.lib.mkNixos "xenia" { };
 
   flake.modules.nixos.host_xenia = {

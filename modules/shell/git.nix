@@ -1,6 +1,5 @@
 {
-  flake.modules.nixos.common =
-    { pkgs, lib, ... }:
+  flake.modules.nixos.common = { pkgs, lib, ... }:
     let
       gitignores = [
         ".idea/"
@@ -18,11 +17,8 @@
         ".classpath"
         ".settings/"
       ];
-    in
-    {
-      programs.lazygit = {
-        enable = true;
-      };
+    in {
+      programs.lazygit = { enable = true; };
       programs.git = {
         enable = true;
         lfs.enable = true;
@@ -30,7 +26,8 @@
           advice.skippedCherryPicks = false;
           branch.sort = "-committerdate";
           # commit.gpgSign = true;
-          core.excludesFile = pkgs.writeText ".gitignore" (lib.concatStringsSep "\n" gitignores);
+          core.excludesFile =
+            pkgs.writeText ".gitignore" (lib.concatStringsSep "\n" gitignores);
           core.fsmonitor = true;
           core.untrackedCache = true;
           diff.algorithm = "histogram";
@@ -48,10 +45,7 @@
           rebase.updateRefs = true;
           rerere.enabled = true;
           # tag.gpgSign = true;
-          url."git@github.com:".insteadOf = [
-            "gh:"
-            "https://github.com/"
-          ];
+          url."git@github.com:".insteadOf = [ "gh:" "https://github.com/" ];
           user.name = "Ruslan Rakshinsky";
           user.email = "ch3rrix.dev@gmail.com";
         };

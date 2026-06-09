@@ -23,12 +23,7 @@ let
     serif = "Roboto Serif";
     mono = "Roboto Mono";
     size = 12;
-    packages =
-      pkgs: with pkgs; [
-        roboto
-        roboto-serif
-        roboto-mono
-      ];
+    packages = pkgs: with pkgs; [ roboto roboto-serif roboto-mono ];
   };
 
   cursor = {
@@ -36,9 +31,4 @@ let
     size = 22;
     package = pkgs: pkgs.bibata-cursors;
   };
-in
-{
-  flake = {
-    inherit theme fonts cursor;
-  };
-}
+in { flake = { inherit theme fonts cursor; }; }

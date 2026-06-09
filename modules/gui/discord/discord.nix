@@ -1,11 +1,7 @@
-{ inputs, self, ... }:
-{
-  flake.modules.nixos.programs_discord =
-    { config, ... }:
-    let
-      inherit (config.custom.constants) user;
-    in
-    {
+{ inputs, self, ... }: {
+  flake.modules.nixos.programs_discord = { config, ... }:
+    let inherit (config.custom.constants) user;
+    in {
       imports = [ inputs.nixcord.nixosModules.nixcord ];
 
       programs.nixcord = {

@@ -1,14 +1,8 @@
-{ inputs, ... }:
-{
-  flake.modules.nixos.common =
-    { config, lib, ... }:
-    let
-      inherit (config.custom.constants) user;
-    in
-    {
-      imports = [
-        inputs.nix-index-database.nixosModules.default
-      ];
+{ inputs, ... }: {
+  flake.modules.nixos.common = { config, lib, ... }:
+    let inherit (config.custom.constants) user;
+    in {
+      imports = [ inputs.nix-index-database.nixosModules.default ];
 
       programs = {
         nix-index-database.comma.enable = true;
@@ -34,21 +28,13 @@
       nix = {
         channel.enable = false;
         settings = {
-          experimental-features = [
-            "flakes"
-            "nix-command"
-          ];
+          experimental-features = [ "flakes" "nix-command" ];
 
-          trusted-users = [
-            "root"
-            "@wheel"
-          ];
+          trusted-users = [ "root" "@wheel" ];
 
-          extra-substituters = [
-          ];
+          extra-substituters = [ ];
 
-          extra-trusted-public-keys = [
-          ];
+          extra-trusted-public-keys = [ ];
         };
       };
     };

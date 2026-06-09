@@ -1,11 +1,5 @@
-{ self, ... }:
-{
-  flake.modules.nixos.wm =
-    {
-      pkgs,
-      lib,
-      ...
-    }:
+{ self, ... }: {
+  flake.modules.nixos.wm = { pkgs, lib, ... }:
     let
       icon-theme-name = "MoreWaita";
       icon-theme-package = pkgs.morewaita-icon-theme;
@@ -17,8 +11,7 @@
       '';
 
       css = import ./_theme.nix { inherit self; };
-    in
-    {
+    in {
       hj.xdg.config.files = {
         "gtk-3.0/settings.ini".text = settings;
         "gtk-4.0/settings.ini".text = settings;
@@ -31,17 +24,15 @@
           enable = lib.mkDefault true;
           profiles = {
             user = {
-              databases = [
-                {
-                  lockAll = false;
-                  settings = {
-                    "org/gnome/desktop/interface" = {
-                      icon-theme = icon-theme-name;
-                      color-scheme = "prefer-dark";
-                    };
+              databases = [{
+                lockAll = false;
+                settings = {
+                  "org/gnome/desktop/interface" = {
+                    icon-theme = icon-theme-name;
+                    color-scheme = "prefer-dark";
                   };
-                }
-              ];
+                };
+              }];
             };
           };
         };

@@ -1,5 +1,4 @@
-{self}:
-{
+{ self }: {
   input = {
     keyboard = {
       xkb = {
@@ -110,26 +109,21 @@
     "Mod+Shift+9".move-column-to-workspace = 9;
     "Mod+Shift+0".move-column-to-workspace = 10;
 
-    "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
-    "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
+    "XF86AudioLowerVolume".spawn-sh =
+      "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+    "XF86AudioRaiseVolume".spawn-sh =
+      "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
     "XF86AudioMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-    "XF86AudioMicMute".spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+    "XF86AudioMicMute".spawn-sh =
+      "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
     "XF86AudioPlay".spawn-sh = "playerctl play-pause";
     "XF86AudioStop".spawn-sh = "playerctl stop";
     "XF86AudioPrev".spawn-sh = "playerctl previous";
     "XF86AudioNext".spawn-sh = "playerctl next";
-    "XF86MonBrightnessUp".spawn = [
-      "brightnessctl"
-      "--class=backlight"
-      "set"
-      "+10%"
-    ];
-    "XF86MonBrightnessDown".spawn = [
-      "brightnessctl"
-      "--class=backlight"
-      "set"
-      "10%-"
-    ];
+    "XF86MonBrightnessUp".spawn =
+      [ "brightnessctl" "--class=backlight" "set" "+10%" ];
+    "XF86MonBrightnessDown".spawn =
+      [ "brightnessctl" "--class=backlight" "set" "10%-" ];
   };
 
   prefer-no-csd = _: { };
@@ -149,9 +143,7 @@
       inactive-color = self.theme.base01;
       active-color = self.theme.base0D;
     };
-    border = {
-      off = _: { };
-    };
+    border = { off = _: { }; };
     shadow = {
       on = _: { };
       offset = _: {
@@ -165,24 +157,21 @@
       draw-behind-window = false;
       color = self.theme.base00;
     };
-    default-column-width = {
-      proportion = 0.500000;
-    };
+    default-column-width = { proportion = 0.5; };
     preset-column-widths = [
       { proportion = 0.333333; }
-      { proportion = 0.500000; }
+      { proportion = 0.5; }
       { proportion = 0.666667; }
-      { proportion = 1.000000; }
+      { proportion = 1.0; }
     ];
     center-focused-column = "never";
     always-center-single-column = _: { };
   };
 
-  hotkey-overlay = {
-    skip-at-startup = _: { };
-  };
+  hotkey-overlay = { skip-at-startup = _: { }; };
 
-  screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d/screenshot-%Y-%m-%d%H-%M-%S.png";
+  screenshot-path =
+    "~/Pictures/Screenshots/%Y-%m-%d/screenshot-%Y-%m-%d%H-%M-%S.png";
 
   window-rule = {
     open-fullscreen = false;
@@ -190,6 +179,5 @@
     geometry-corner-radius = 8;
   };
 
-  layer-rules = [
-  ];
+  layer-rules = [ ];
 }

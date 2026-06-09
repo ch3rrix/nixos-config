@@ -1,5 +1,4 @@
-{ self }:
-{
+{ self }: {
   base16 = ''
     theme[main_bg]="${self.theme.base00}"
     theme[main_fg]="${self.theme.base05}"

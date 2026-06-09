@@ -1,8 +1,5 @@
-{ inputs, ... }:
-{
-  flake.modules.nixos.common =
-    { pkgs, ... }:
-    {
-      boot.kernelPackages = pkgs.linuxPackages_latest;
-    };
+{ inputs, ... }: {
+  flake.modules.nixos.common = { pkgs, ... }: {
+    boot.kernelPackages = pkgs.linuxPackages_latest;
+  };
 }

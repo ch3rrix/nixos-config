@@ -1,10 +1,7 @@
 {
-  flake.modules.nixos.common =
-    { config, ... }:
-    let
-      inherit (config.custom.constants) host;
-    in
-    {
+  flake.modules.nixos.common = { config, ... }:
+    let inherit (config.custom.constants) host;
+    in {
       networking.networkmanager.enable = true;
 
       networking.hostName = host;

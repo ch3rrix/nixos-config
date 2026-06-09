@@ -1,9 +1,6 @@
-{ self, ... }:
-{
-  flake.modules.nixos.wm =
-    { pkgs, ... }:
-    with self.fonts;
-    {
+{ self, ... }: {
+  flake.modules.nixos.wm = { pkgs, ... }:
+    with self.fonts; {
       fonts = {
         fontconfig.defaultFonts = {
           sansSerif = [ sans ];

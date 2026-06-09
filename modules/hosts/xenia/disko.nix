@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   flake.modules.nixos.host_xenia = {
     imports = [ inputs.disko.nixosModules.disko ];
 
@@ -29,10 +28,7 @@
                   type = "filesystem";
                   format = "xfs";
                   mountpoint = "/";
-                  mountOptions = [
-                    "defaults"
-                    "pquota"
-                  ];
+                  mountOptions = [ "defaults" "pquota" ];
                 };
               };
             }; # partitions

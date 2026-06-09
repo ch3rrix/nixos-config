@@ -1,14 +1,12 @@
 {
-  flake.modules.nixos.common =
-    { pkgs, lib, ... }:
-    {
-      programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
-        withNodeJs = true;
-        withPython3 = true;
-      };
+  flake.modules.nixos.common = { pkgs, lib, ... }: {
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      withNodeJs = true;
+      withPython3 = true;
     };
+  };
 }

@@ -1,5 +1,4 @@
-{ self }:
-''
+{ self }: ''
   @import url('https://raw.githubusercontent.com/imbypass/base16-discord/refs/heads/main/base16.css');
 
   :root {

@@ -1,29 +1,19 @@
 {
-  flake.modules.nixos.common =
-    { pkgs, config, ... }:
-    let
-      inherit (config.custom.constants) user;
-    in
-    {
+  flake.modules.nixos.common = { pkgs, config, ... }:
+    let inherit (config.custom.constants) user;
+    in {
       users.users = {
-        root = {
-          initialPassword = "password";
-        };
+        root = { initialPassword = "password"; };
 
         ${user} = {
           initialPassword = "password";
           isNormalUser = true;
-          extraGroups = [
-            "networkmanager"
-            "wheel"
-          ];
+          extraGroups = [ "networkmanager" "wheel" ];
         };
       };
 
       environment = {
-        systemPackages = [
-          pkgs.xdg-user-dirs
-        ];
+        systemPackages = [ pkgs.xdg-user-dirs ];
 
         etc."xdg/user-dirs.defaults".text = ''
           DOWNLOAD=Downloads
