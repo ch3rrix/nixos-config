@@ -1,0 +1,53 @@
+{ self, inputs, ... }: {
+  perSystem = { pkgs, ... }: {
+    packages.niri = inputs.wrappers.wrappers.niri.wrap {
+      inherit pkgs;
+      package = pkgs.niri;
+      settings = import ./_settings.nix { inherit self; };
+      v2-settings = true;
+    };
+  };
+
+  flake.modules.nixos.wm_niri =
+    { pkgs, config, ... }:
+    let
+      niri' = self.packages.${pkgs.stdenv.hostPlatform.system}.niri.wrap {
+        settings = {
+          binds = config.custom.keybinds;
+          cursor = with self.cursor; {
+            xcursor-theme = theme;
+            xcursor-size = size;
+          };
+        };
+        extraSettings = [
+          {
+            include = [
+              { optional = true; }
+              "~/.config/niri/monitors.kdl"
+            ];
+          }
+        ];
+      };
+    in
+    {
+      imports = [ self.modules.nixos.wm ];
+
+      programs.niri = {
+        enable = true;
+        package = niri';
+      };
+      systemd.user.services.niri.enableDefaultPath = false;
+      security.soteria.enable = true;
+
+      services = {
+        gnome.gcr-ssh-agent.enable = false;
+      };
+
+      environment.systemPackages = [
+        pkgs.xwayland-satellite
+        pkgs.fuzzel
+        pkgs.brightnessctl
+        (self.cursor.package pkgs)
+      ];
+    };
+}

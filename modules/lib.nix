@@ -1,7 +1,13 @@
 { inputs, self, ... }: {
   flake.lib = {
-    mkNixos = host:
-      { user ? "ch3rrix", system ? "x86_64-linux", extraConfig ? { }, }: {
+    mkNixos =
+      host:
+      {
+        user ? "ch3rrix",
+        system ? "x86_64-linux",
+        extraConfig ? { },
+      }:
+      {
         ${host} = inputs.nixpkgs.lib.nixosSystem {
           modules = [
             { config.custom.constants = { inherit user system host; }; }
@@ -12,7 +18,8 @@
         };
       };
 
-    stripDesktopFiles = pkg:
+    stripDesktopFiles =
+      pkg:
       pkg.overrideAttrs (origAttrs: {
         postInstall = ''
           ${origAttrs.postInstall or ""}
