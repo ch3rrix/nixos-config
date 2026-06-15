@@ -28,6 +28,7 @@ let
         roboto
         roboto-serif
         roboto-mono
+        nerd-fonts.iosevka
       ];
   };
 
