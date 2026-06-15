@@ -27,6 +27,7 @@
       environment = {
         systemPackages = with pkgs; [
           self.packages.${pkgs.stdenv.hostPlatform.system}.eza
+          bat
           ripgrep
           unzip
           zip
@@ -38,6 +39,7 @@
           la = "eza -a";
           lla = "eza -la";
           lt = "eza --tree";
+          cat = "bat";
         };
       };
 
