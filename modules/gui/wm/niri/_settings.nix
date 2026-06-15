@@ -42,8 +42,10 @@
     }
 
     {
-      matches =
-        [ { app-id = "firefox$"; } { title = "^Picture-in-Picture$"; } ];
+      matches = [{
+        app-id = "firefox$";
+        title = "^Picture-in-Picture$";
+      }];
       open-floating = true;
     }
 
