@@ -7,6 +7,7 @@
 
       games
       programs_nautilus
+      programs_zerotier
       programs_telegram
       programs_kitty
       programs_firefox
