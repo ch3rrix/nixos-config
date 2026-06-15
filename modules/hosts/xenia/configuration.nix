@@ -7,6 +7,7 @@
       games
       hardware_battery
       hardware_bluetooth
+      hardware_zram
     ];
   };
 }
